@@ -6,3 +6,7 @@ body {
 a {
   color: #00B7FF;
 }
+
+.sponsor img {
+	max-width: 200px;
+}
