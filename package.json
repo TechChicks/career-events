@@ -1,0 +1,22 @@
+{
+  "name": "actw",
+  "version": "1.0.0",
+  "description": "Website for the annual ACT-W conference",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shaelyn-Watson/actw.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shaelyn-Watson/actw/issues"
+  },
+  "homepage": "https://github.com/Shaelyn-Watson/actw#readme",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
