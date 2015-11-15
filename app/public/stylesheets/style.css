@@ -10,3 +10,7 @@ a {
 .sponsor img {
 	max-width: 200px;
 }
+
+.bkimg {
+    background-image: url(/images/chicktech.jpg);
+}

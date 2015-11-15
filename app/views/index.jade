@@ -3,13 +3,14 @@ extends layout
 block content
   include navbar
 
-  h1= title
-  p Welcome to #{title}
+  body.bkimg
+      h1= title
+      p Welcome to #{title}
 
-  include about
-  include sessions
-  include schedule
-  include sponsors
-  include opportunities
-  include organizers
-  include contact
+      include about
+      include sessions
+      include schedule
+      include sponsors
+      include opportunities
+      include organizers
+      include contact
