@@ -11,6 +11,12 @@ a {
 	max-width: 200px;
 }
 
-.bkimg {
-    background-image: url(/images/chicktech.jpg);
+.circuit-background {
+    background-image: url(/images/actw-main-background.png);
+}
+
+.blank-background {
+    background: #ffffff;
+    padding: 50px;
+    margin: 100px;
 }
