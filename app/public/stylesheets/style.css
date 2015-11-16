@@ -12,9 +12,12 @@ a {
 }
 
 .circuit-background {
-    background-image: url(/images/actw-main-background.png);
+  background-image: url(/images/actw-main-background.png);
 }
 
+img {
+  width:100%;
+}
 
 /* Large desktop */
 @media screen and (min-width: 1200px) {
@@ -31,7 +34,7 @@ a {
     background: #ffffff;
     padding: 50px;
     margin: 100px;
-	}
+  }
   
 }
 
