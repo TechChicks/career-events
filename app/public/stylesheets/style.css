@@ -10,3 +10,56 @@ a {
 .sponsor img {
 	max-width: 200px;
 }
+
+.circuit-background {
+  background-image: url(/images/actw-main-background.png);
+}
+
+img {
+  width:100%;
+}
+
+/* Large desktop */
+@media screen and (min-width: 1200px) {
+	.blank-background {
+	    background: #ffffff;
+	    padding: 50px;
+	    margin: 100px;
+	}
+}
+
+/* Desktop + Landscape Tablet */
+@media screen and (min-width: 980px) and (max-width: 1199px ) {
+  .blank-background {
+    background: #ffffff;
+    padding: 50px;
+    margin: 100px;
+  }
+  
+}
+
+/* Desktop + Portrait Tablet */
+@media screen and (max-width: 979px) and (min-width: 768px) {
+  .blank-background {
+    background: #ffffff;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 767px) and (min-width: 500px) { 
+  .blank-background {
+    background: #ffffff;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 499px) {
+  .blank-background {
+    background: #ffffff;
+    width: 100%;
+  }
+}
