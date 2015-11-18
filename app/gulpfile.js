@@ -11,15 +11,15 @@ var nodemon 			= require('gulp-nodemon');
 var reload      	= browserSync.reload;
 
 var src = {
-    scss: 'scss/**/*.scss',
-    css:  'public/css',
-    jade: 'views/*.jade'
+	scss: 'scss/**/*.scss',
+	css:  'public/css',
+	jade: 'views/*.jade'
 };
 
 // Default Task
 gulp.task('default', ['browser-sync', 'compile'], function() {
-    gulp.watch([src.scss], ['sass']);
-    gulp.watch([src.jade], ['jade']);
+	gulp.watch([src.scss], ['sass']);
+	gulp.watch([src.jade], ['jade']);
 });
 
 // Compile
@@ -33,8 +33,8 @@ gulp.task('bs-reload', function() {
 // BrowserSync Settings
 gulp.task('browser-sync', ['nodemon'], function() {
   browserSync({
-    proxy: "localhost:5000",
-    port: 7000
+	proxy: "localhost:5000",
+	port: 7000
   });
 });
 
