@@ -2,7 +2,7 @@ extends layout
 
 block content
   body.circuit-background
-    include navbar
+    include homepage/navbar
 
     div.blank-background
         h1= title
@@ -10,8 +10,8 @@ block content
 
         img(src='/images/actw-background1.png')
 
-        include about
-        include sponsors
-        include opportunities
-        include organizers
-        include contact
+        include homepage/about
+        include homepage/sponsors
+        include homepage/opportunities
+        include homepage/organizers
+        include homepage/contact

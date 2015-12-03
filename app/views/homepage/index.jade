@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  body.circuit-background
+    include navbar
+
+    div.blank-background
+        h1= title
+        p Welcome to #{title}
+
+        img(src='/images/actw-background1.png')
+
+        include about
+        include sponsors
+        include opportunities
+        include organizers
+        include contact
