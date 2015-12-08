@@ -1,4 +1,4 @@
-extends layout
+extends ../layout
 
 block content
   body.circuit-background
@@ -8,12 +8,15 @@ block content
         h1= title
         p Welcome to #{title}
 
-        img(src='/images/actw-background1.png')
+        .reduced-size
+            img(src='/images/chicktech_flower_sticker.jpg')
 
         include about
+
+        h2 Date/Time: TBD
+
         include sessions
         include schedule
+        include organizers
         include sponsors
         include opportunities
-        include organizers
-        include contact
