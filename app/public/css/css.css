@@ -1,76 +1,3 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-a {
-  color: #00B7FF;
-}
-
-.sponsor img {
-  max-width: 200px;
-}
-
-.organizer img {
-  max-width: 200px;
-}
-
-.reduced-size img {
-  max-width: 200px;
-}
-
-.circuit-background {
-  background-image: url(/images/actw-main-background.png);
-}
-
-img {
-  width: 100%;
-}
-
-/* Large desktop */
-@media screen and (min-width: 1200px) {
-  .blank-background {
-    background: #ffffff;
-    padding: 50px;
-    margin: 100px;
-  }
-}
-
-/* Desktop + Landscape Tablet */
-@media screen and (min-width: 980px) and (max-width: 1199px) {
-  .blank-background {
-    background: #ffffff;
-    padding: 50px;
-    margin: 100px;
-  }
-}
-
-/* Desktop + Portrait Tablet */
-@media screen and (max-width: 979px) and (min-width: 768px) {
-  .blank-background {
-    background: #ffffff;
-    padding: 0;
-    margin: 0;
-  }
-}
-
-/* Mobile */
-@media screen and (max-width: 767px) and (min-width: 500px) {
-  .blank-background {
-    background: #ffffff;
-    padding: 0;
-    margin: 0;
-  }
-}
-
-/* Mobile */
-@media screen and (max-width: 499px) {
-  .blank-background {
-    background: #ffffff;
-    width: 100%;
-  }
-}
-
 /*!
  * bootstrap-grid v1.1.0
  * Copyright 2015 Santeri Hiltunen
@@ -1063,3 +990,282 @@ img {
     margin-left: 0%;
   }
 }
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+ul, p {
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-padding-start: 0;
+}
+
+header {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #1b1713;
+  height: 60px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 5%;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+header a {
+  color: #b9a898;
+}
+
+header a:hover {
+  color: #927a63;
+}
+
+header a.logo {
+  color: #FFF;
+  font-size: 21px;
+  font-weight: 600;
+}
+
+header ul {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+}
+
+header ul li {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header ul li a {
+  color: #b9a898;
+  display: block;
+  font-size: .9rem;
+  font-weight: 300;
+  padding: 0 15px;
+}
+
+header ul li a:hover {
+  color: #927a63;
+}
+
+header ul li:last-of-type a {
+  padding-right: 0;
+}
+
+body {
+  background: -webkit-linear-gradient(60deg, rgba(146, 122, 99, 0.85), #b9a898), url(/images/actw-main-background.png);
+  background: linear-gradient(30deg, rgba(146, 122, 99, 0.85), #b9a898), url(/images/actw-main-background.png);
+  background-blend-mode: multiply;
+  background-size: 100%, 75px;
+  color: #5b4c3e;
+  font: 62.5% "Roboto", Helvetica, Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  color: #2e261f;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 12px 0;
+}
+
+p.callout {
+  color: #927a63;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+p a {
+  border-bottom: 2px solid rgba(185, 168, 152, 0.45);
+}
+
+p a:hover {
+  border-color: #b9a898;
+}
+
+a {
+  color: #2e261f;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #1b1713;
+}
+
+main {
+  background: #f5ede6;
+  margin: 108px auto;
+  width: 90%;
+}
+
+@media screen and (max-width: 960px) {
+  main {
+    margin: 60px auto 0;
+    width: 100%;
+  }
+}
+
+section {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  padding: 9% 6%;
+}
+
+section > * {
+  width: 100%;
+}
+
+section:last-of-type {
+  padding-bottom: 9%;
+}
+
+img {
+  width: 100%;
+}
+
+[id="about"] h2 {
+  border-bottom: 3px solid #2e261f;
+  margin-bottom: 0;
+}
+
+[id="about"] h3 {
+  color: #927a63;
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-top: 6px;
+  width: 100%;
+}
+
+[id="cities"] {
+  background: -webkit-linear-gradient(60deg, rgba(27, 23, 19, 0.85), #1b1713), url(/images/actw-main-background.png);
+  background: linear-gradient(30deg, rgba(27, 23, 19, 0.85), #1b1713), url(/images/actw-main-background.png);
+  background-blend-mode: multiply;
+  background-size: 100%, 75px;
+  width: 100%;
+}
+
+[id="cities"] h2 {
+  color: #5b4c3e;
+}
+
+[id="cities"] ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  list-style: none;
+}
+
+[id="cities"] ul li a {
+  background: #5b4c3e;
+  border-radius: 3px;
+  color: #1b1713;
+  display: block;
+  font-size: 2.7rem;
+  font-weight: 200;
+  margin: 0 6px 6px 0;
+  padding: 6px 9px;
+}
+
+[id="cities"] ul li a:hover {
+  color: #FFF;
+}
+
+[id="sponsors"] {
+  background: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+[id="sponsors"] .sponsor {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: auto;
+  min-height: 90px;
+  max-height: 180px;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  padding: 0 3%;
+  width: calc(100%/3);
+}
+
+[id="sponsors"] .sponsor img {
+  max-width: 200px;
+  -webkit-box-ordinal-group: 3;
+  -webkit-order: 2;
+      -ms-flex-order: 2;
+          order: 2;
+  width: 90%;
+}
+
+[id="sponsors"] .sponsor p {
+  font-size: .9rem;
+  -webkit-box-ordinal-group: 2;
+  -webkit-order: 1;
+      -ms-flex-order: 1;
+          order: 1;
+  text-align: center;
+  width: 100%;
+}
+
+[id="sponsors"] .sponsor.forgerock img, [id="sponsors"] .sponsor.cdk img {
+  max-width: 120px;
+}
+
+/* Large desktop */
+/* Desktop + Landscape Tablet */
+/* Desktop + Portrait Tablet */
+/* Mobile */
+/* Mobile */

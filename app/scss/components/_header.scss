@@ -1,0 +1,55 @@
+header {
+  align-items: center;
+  background: $darker;
+  height: $header;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5%;
+
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  a { 
+    color: $lighter;
+
+    &:hover {
+      color: $light;
+    }
+  }
+
+  a.logo { 
+    color: #FFF;
+    font-size: 21px;
+    font-weight: 600;
+  }
+
+  ul { 
+    align-items: center;
+    display: flex;
+    //height: $header;
+    list-style: none;
+
+    li {
+      align-items: center;
+      display: flex;
+      //height: 48%;
+
+      a {
+        color: $lighter;
+        display: block;
+        font-size: .9rem;
+        font-weight: 300;
+        //letter-spacing: .09rem;
+        padding: 0 15px;
+        //text-transform: uppercase;
+
+        &:hover { color: $light; }
+      }
+
+      //&:not(:first-of-type) { border-left: 1px solid $default; }
+      &:last-of-type a { padding-right: 0; }
+    }
+  }
+
+}

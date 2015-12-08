@@ -1,2 +1,11 @@
-@import "pages/home";
 @import "grid";
+@import "resets";
+
+@import "variables/structure";
+@import "variables/colors";
+
+@import "components/header";
+@import "components/body";
+
+@import "pages/home";
+

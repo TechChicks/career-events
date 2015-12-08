@@ -1,0 +1,69 @@
+body {
+  // background: url(/images/actw-main-background.png);
+  // background-size: 75px;
+  background: linear-gradient(30deg, fade_out($light, .15), $lighter), url(/images/actw-main-background.png);
+  background-blend-mode: multiply;
+  background-size: 100%, 75px;
+  color: $default;
+  font: 62.5% "Roboto", Helvetica, Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  color: $dark;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 12px 0;
+
+  &.callout {
+    color: $light;
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+
+  a {
+    border-bottom: 2px solid fade_out($lighter, .55);
+    &:hover { border-color: $lighter; }
+  }
+}
+
+a {
+  color: $dark;
+  font-weight: 500;
+  text-decoration: none;
+
+  &:hover { 
+    color: $darker; 
+  }
+}
+
+main {
+  background: $bg;
+  margin: $header*1.8 auto;
+  width: 90%;
+
+  @media screen and (max-width: 960px) {
+    margin: $header auto 0;
+    width: 100%;
+  }
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 9% 6%;
+
+  > * { width: 100%; }
+
+  &:last-of-type {
+    padding-bottom: 9%;
+  }
+}
+
+
