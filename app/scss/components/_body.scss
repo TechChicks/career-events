@@ -1,30 +1,67 @@
 body {
   // background: url(/images/actw-main-background.png);
   // background-size: 75px;
-  background: linear-gradient(30deg, fade_out($light, .15), $lighter), url(/images/actw-main-background.png);
-  background-blend-mode: multiply;
+  // background: linear-gradient(30deg, hsl(93, 44%, 63%), hsl(93, 44%, 3%)), 
+  //             url(/images/actw-main-background.png);
+  background: linear-gradient($lighter, $default),
+              url(/images/actw-main-background.png);
+  background-attachment: fixed;
+  background-blend-mode: screen;
   background-size: 100%, 75px;
+  //background: fade_out($lighter, .5);
   color: $default;
-  font: 62.5% "Roboto", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-size: 1.5rem;
 }
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   color: $dark;
-  font-weight: 600;
-  text-transform: uppercase;
 }
 
-p {
-  font-size: 1.2rem;
-  font-weight: 400;
-  line-height: 1.5;
-  margin: 12px 0;
+h1, .h1 { 
+  font-size: 3rem; 
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
 
+  &.underlined {
+    border-bottom: 9px solid $dark;
+    margin-bottom: 0;
+    padding-bottom: 3px;
+  }
+}
+
+h2, .h2 { 
+  font-size: 2.4rem; 
+}
+
+h3, .h3 {
+  color: $lighter; 
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+p, ul, ol {
+  font-weight: 400;
+  line-height: 1.8;
+  margin: 12px 0;
+}
+
+ul, ol { list-style-position: inside; }
+
+p {
   &.callout {
-    color: $light;
-    font-size: 1.5rem;
+    background: fade_out($lighter, .5);
+    border-radius: 1px;
+    //border-left: 5px solid fade_out($lighter, .5);
+    color: $default;
+    font-size: 1.8rem;
     font-weight: 300;
+    line-height: 1.5;
+    margin: 21px 0;
+    padding: 12px;
+    padding-left: 24px;
   }
 
   a {
@@ -45,8 +82,10 @@ a {
 
 main {
   background: $bg;
-  margin: $header*1.8 auto;
-  width: 90%;
+  box-shadow: 0 0 20px 0 $lighter;
+  margin: $header*1.2 auto;
+  max-width: 960px;
+  width: 100%;
 
   @media screen and (max-width: 960px) {
     margin: $header auto 0;
@@ -64,6 +103,7 @@ section {
   &:last-of-type {
     padding-bottom: 9%;
   }
-}
 
+  h2 { margin-top: 0; }
+}
 

@@ -1,0 +1,162 @@
+img {
+  width: 100%;
+}
+
+[id="about"] {
+  h1 {
+    font-size: 5.2rem;
+    margin: 0;
+
+    span {
+      font-family: 'Euphoria Script', cursive;
+      font-size: 2.7rem;
+      font-weight: normal;
+      letter-spacing: -1px;
+      text-transform: lowercase;
+      vertical-align: 9px;
+    }
+  }
+
+  h3 { 
+    color: $lighter; 
+    font-size: 2.1rem;
+    font-style: italic;
+    font-weight: 100;
+    margin-bottom: 30px;
+    margin-top: 12px; 
+    width: 100%; 
+  }
+}
+
+[id="cities"] {
+  // background: linear-gradient($bg, $default), 
+  //             url(/images/actw-main-background.png);
+  // background-blend-mode: exclusion;
+  // background-size: 100%, 75px;
+  background: $darker;
+  width: 100%;
+
+  h2 {
+    color: $lighter;
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin-top: 15px;
+
+    li {
+      a {
+        background: fade_out($teal, .75);
+        border-radius: 3px;
+        color: $lighter;
+        display: block;
+        font-size: 3.6rem;
+        font-weight: 200;
+        margin: 0 6px 6px 0;
+        padding: 6px 12px;
+
+        &:hover {
+          color: #FFF;
+        }
+      }
+    }
+  }
+}
+
+[id="sponsors"] {
+  background: white;
+
+  .sponsors {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    //max-width: 960px;
+  }
+
+  .sponsor { 
+    padding: 3% 6%;
+    width: calc(100%/3);
+
+    &:nth-of-type(3n+1) { padding-left: 0; }
+    &:nth-of-type(3n+2) { text-align: center; }
+    &:nth-of-type(3n+3) { padding-right: 0; text-align: right; }
+
+    img { 
+      max-width: 210px;
+      order: 2; 
+      width: 100%;
+    }
+
+    p { 
+      font-size: .9rem;
+      order: 1;
+      text-align: center;
+      width: 100%;
+    }
+
+    &.forgerock,
+    &.cdk {
+      img { max-width: 150px; }
+    }
+  }
+}
+
+[id="opportunities"] {}
+[id="organizers"] {
+  background: white;
+  img { max-width: 240px }
+
+  .organizer {
+    margin-top: 30px;
+  }
+}
+[id="contact"] { 
+  background: $darker; 
+  color: $lighter;
+
+  h2 { color: $lighter; }
+  h3 { 
+    text-transform: uppercase; 
+    margin-bottom: 6px;
+  }
+
+  .contact {
+    margin: 15px 0;
+  }
+
+  dd, dt {
+    line-height: 1.5;
+  }
+
+  .name {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+
+  .title { font-weight: bold; }
+  .email { color: fade_out($lighter, .5); }
+}
+
+/* Large desktop */
+@media screen and (min-width: 1200px) {
+}
+
+/* Desktop + Landscape Tablet */
+@media screen and (min-width: 980px) and (max-width: 1199px ) {
+}
+
+/* Desktop + Portrait Tablet */
+@media screen and (max-width: 979px) and (min-width: 768px) {
+}
+
+/* Mobile */
+@media screen and (max-width: 767px) and (min-width: 500px) { 
+}
+
+/* Mobile */
+@media screen and (max-width: 499px) {
+}
