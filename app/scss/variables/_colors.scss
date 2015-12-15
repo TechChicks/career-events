@@ -1,0 +1,27 @@
+
+// TODO: Get back to this.
+
+// $color: (
+//   brown: (
+//     default:  hsl(29, 19%, 30%),
+//     dark:     hsl(29, 19%, -30%),
+//     darker:   hsl(29, 19%, -60%),
+//     light:    hsl(29, 19%, 60%),
+//     lighter:  hsl(29, 19%, 90%)
+//   )
+// );
+
+// @function color($color-name, $color-variant) {
+//   @return map-get(map-get($colors, $color-name), $color-variant);
+// }
+
+$bg:       hsl(30, 42%, 93%);
+$default:  hsl(29, 19%, 30%);
+$dark:     hsl(29, 19%, 15%);
+$darker:   hsl(29, 19%, 9%);
+$light:    hsl(29, 19%, 48%);
+$lighter:  hsl(29, 19%, 66%);
+
+$blue:     #00B7FF;
+$teal:     #4AC2C9;
+$melon:    #E45454;   

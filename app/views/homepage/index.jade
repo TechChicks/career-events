@@ -1,18 +1,16 @@
 extends ../layout
 
 block content
-  body.circuit-background
+  body.home
     include navbar
 
-    div.blank-background
-        h1= title
-        p Welcome to #{title}
+    main
 
-        img(src='/images/actw-background1.png')
+      // img(src='/images/actw-background1.png')
 
-        include about
-        include cities
-        include sponsors
-        include opportunities
-        include organizers
-        include contact
+      include about
+      include cities
+      include sponsors
+      include opportunities
+      include organizers
+      include contact

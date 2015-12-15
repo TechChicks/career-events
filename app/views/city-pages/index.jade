@@ -1,22 +1,16 @@
 extends ../layout
 
 block content
-  body.circuit-background
+  body.city
     include navbar
 
-    div.blank-background
-        h1= title
-        p Welcome to #{title}
+    main
+      include about
 
-        .reduced-size
-            img(src='/images/chicktech_flower_sticker.jpg')
+      //h2 Date/Time: TBD
 
-        include about
-
-        h2 Date/Time: TBD
-
-        include sessions
-        include schedule
-        include organizers
-        include sponsors
-        include opportunities
+      include sessions
+      include schedule
+      include organizers
+      include sponsors
+      include opportunities
