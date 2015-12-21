@@ -1,16 +1,17 @@
-extends ../layout
+extends ../../layout
 
 block content
-  body.home
+  body.city
     include navbar
 
     main
-
-      include header
-      img(src='/images/actw-background1.png')
-      include cities
       include about
-      include why
+
+      //h2 Date/Time: TBD
+
+      include sessions
+      include schedule
+      include organizers
       include sponsors
       include opportunities
       include contact
