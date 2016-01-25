@@ -11,7 +11,7 @@
   b. In another terminal window, run the command `psql` to access the Postgres server. This is where you will set up your local database and tables.
   c. Run `CREATE DATABASE actw_development;` to create the database;
   d. Run `\c actw_development` to connect to the database;
-  e. Run `CREATE TABLE tech_chicks (id serial PRIMARY KEY, name varchar, age int);
+  e. Run `CREATE TABLE tech_chicks (id serial PRIMARY KEY, name varchar, age int);`
   f. Just for testing out GET /users route let's load our database with a value. Run `INSERT INTO tech_chicks (name, age) VALUES ('Gamora', 25);`
   g. Finally go to the `config.json` file in the actw/app directory and replace the username of the postgres connection string with your postgres username settings.
 4. Run `gulp` to start the server and open a new browser tab to your local environment
