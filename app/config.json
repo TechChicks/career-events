@@ -1,0 +1,3 @@
+{
+  "postgres": "postgres://username@localhost:5432/actw_development"
+}
