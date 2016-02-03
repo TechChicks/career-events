@@ -1,5 +1,6 @@
 app/node_modules
 app/npm-debug.log
+app/config.json
 
 *.DS_Store
 *.log
