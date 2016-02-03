@@ -1,3 +1,3 @@
 {
-  "postgres": "postgres://username@localhost:5432/actw_development"
+  "postgres": "postgres://swatson@localhost:5432/actw_development"
 }

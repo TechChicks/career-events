@@ -13,7 +13,7 @@
   4. Run `\c actw_development` to connect to the database;
   5. Run `CREATE TABLE tech_chicks (id serial PRIMARY KEY, name varchar, age int);`
   6. Just for testing out GET /users route let's load our database with a value. Run `INSERT INTO tech_chicks (name, age) VALUES ('Gamora', 25);`
-  7. Finally go to the `config.json` file in the actw/app directory and replace the username of the postgres connection string with your postgres username settings.
+  7. Finally create `app/config.json` file in the actw/app directory and replace the username of the postgres connection string with your postgres username settings. You'll need to contact a collaborator for the config details.
 4. Run `gulp` to start the server and open a new browser tab to your local environment
 
 ### Environment
