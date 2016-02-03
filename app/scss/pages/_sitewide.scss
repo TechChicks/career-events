@@ -8,7 +8,7 @@ img {
     margin: 0;
 
     span {
-      font-family: 'Euphoria Script', cursive;
+      font-family: $script;
       font-size: 2.7rem;
       font-weight: normal;
       letter-spacing: -1px;
@@ -18,7 +18,7 @@ img {
   }
 
   h3 { 
-    color: $lighter; 
+    color: $teal; 
     font-size: 2.1rem;
     font-style: italic;
     font-weight: 100;
@@ -29,15 +29,12 @@ img {
 }
 
 [id="cities"] {
-  // background: linear-gradient($bg, $default), 
-  //             url(/images/actw-main-background.png);
-  // background-blend-mode: exclusion;
-  // background-size: 100%, 75px;
-  background: $darker;
+  background: linear-gradient(darken($teal, 15) 30%, $melon 150%);
+  //background: $melon;
   width: 100%;
 
   h2 {
-    color: $lighter;
+    color: $bg;
   }
 
   ul {
@@ -48,9 +45,9 @@ img {
 
     li {
       a {
-        background: fade_out($teal, .75);
+        background: fade_out($teal, .4);
         border-radius: 3px;
-        color: $lighter;
+        color: $bg;
         display: block;
         font-size: 3.6rem;
         font-weight: 200;
@@ -58,6 +55,7 @@ img {
         padding: 6px 12px;
 
         &:hover {
+          background: $melon;
           color: #FFF;
         }
       }
@@ -114,11 +112,12 @@ img {
   }
 }
 [id="contact"] { 
-  background: $darker; 
-  color: $lighter;
+  background: darken($teal, 36); 
+  color: $teal;
 
-  h2 { color: $lighter; }
+  h2 { color: white; }
   h3 { 
+    color: $teal;
     text-transform: uppercase; 
     margin-bottom: 6px;
   }
@@ -137,8 +136,13 @@ img {
     font-weight: bold;
   }
 
-  .title { font-weight: bold; }
-  .email { color: fade_out($lighter, .5); }
+  .title { 
+    font-weight: bold;
+  }
+
+  .email { 
+    color: fade-out($teal, .4);
+  }
 }
 
 /* Large desktop */

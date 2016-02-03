@@ -1,6 +1,6 @@
 header {
   background: $bg;
-  box-shadow: 0 0 20px 0 $lighter;
+  box-shadow: 0 0 60px 0 fade-out(darken($teal, 30), .7);
   display: flex;
   height: $header;
   left: 50%;
@@ -20,7 +20,7 @@ header {
 
   a.logo { 
     align-items: center;
-    background: $dark;
+    background: $melon;
     color: $bg;
     display: flex;
     font-size: 21px;
@@ -29,6 +29,10 @@ header {
     justify-content: center;
     text-align: center;
     width: 120px;
+
+    &:hover {
+      background: $teal;
+    }
   }
 
   nav {
