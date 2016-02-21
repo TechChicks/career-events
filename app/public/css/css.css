@@ -1003,7 +1003,7 @@ html {
 
 header {
   background: #f5ede6;
-  box-shadow: 0 0 20px 0 #b9a898;
+  box-shadow: 0 0 60px 0 rgba(19, 55, 55, 0.3);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1040,7 +1040,7 @@ header a.logo {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #2e261f;
+  background: #F0575B;
   color: #f5ede6;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1055,6 +1055,10 @@ header a.logo {
           justify-content: center;
   text-align: center;
   width: 120px;
+}
+
+header a.logo:hover {
+  background: #39AAAA;
 }
 
 header nav {
@@ -1170,14 +1174,19 @@ header .fa {
 }
 
 body {
-  background: -webkit-linear-gradient(#b9a898, #5b4c3e), url(/images/actw-main-background.png);
-  background: linear-gradient(#b9a898, #5b4c3e), url(/images/actw-main-background.png);
+  background: -webkit-linear-gradient(#9edede, #267171), url(/images/actw-main-background.png);
+  background: linear-gradient(#9edede, #267171), url(/images/actw-main-background.png);
   background-attachment: fixed;
-  background-blend-mode: screen;
+  background-blend-mode: difference;
   background-size: 100%, 75px;
   color: #5b4c3e;
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1.5rem;
+}
+
+body * {
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 
 h1, h2, h3, h4, h5, h6,
@@ -1219,9 +1228,9 @@ ul, ol {
 }
 
 p.callout {
-  background: rgba(185, 168, 152, 0.5);
-  border-radius: 1px;
-  color: #5b4c3e;
+  background: rgba(46, 38, 31, 0.5);
+  border-radius: 3px;
+  color: #f5ede6;
   font-size: 1.8rem;
   font-weight: 300;
   line-height: 1.5;
@@ -1250,7 +1259,7 @@ a:hover {
 
 main {
   background: #f5ede6;
-  box-shadow: 0 0 20px 0 #b9a898;
+  box-shadow: 0 0 120px 0 rgba(19, 55, 55, 0.6);
   margin: 72px auto;
   max-width: 960px;
   width: 100%;
@@ -1296,7 +1305,7 @@ img {
 }
 
 [id="about"] h1 span {
-  font-family: 'Euphoria Script', cursive;
+  font-family: "Euphoria Script", cursive;
   font-size: 2.7rem;
   font-weight: normal;
   letter-spacing: -1px;
@@ -1305,7 +1314,7 @@ img {
 }
 
 [id="about"] h3 {
-  color: #b9a898;
+  color: #39AAAA;
   font-size: 2.1rem;
   font-style: italic;
   font-weight: 100;
@@ -1315,12 +1324,13 @@ img {
 }
 
 [id="cities"] {
-  background: #1b1713;
+  background: -webkit-linear-gradient(#267171 30%, #F0575B 150%);
+  background: linear-gradient(#267171 30%, #F0575B 150%);
   width: 100%;
 }
 
 [id="cities"] h2 {
-  color: #b9a898;
+  color: #f5ede6;
 }
 
 [id="cities"] ul {
@@ -1336,9 +1346,9 @@ img {
 }
 
 [id="cities"] ul li a {
-  background: rgba(74, 194, 201, 0.25);
+  background: rgba(57, 170, 170, 0.6);
   border-radius: 3px;
-  color: #b9a898;
+  color: #f5ede6;
   display: block;
   font-size: 3.6rem;
   font-weight: 200;
@@ -1347,6 +1357,7 @@ img {
 }
 
 [id="cities"] ul li a:hover {
+  background: #F0575B;
   color: #FFF;
 }
 
@@ -1426,15 +1437,16 @@ img {
 }
 
 [id="contact"] {
-  background: #1b1713;
-  color: #b9a898;
+  background: #0b2121;
+  color: #39AAAA;
 }
 
 [id="contact"] h2 {
-  color: #b9a898;
+  color: white;
 }
 
 [id="contact"] h3 {
+  color: #39AAAA;
   text-transform: uppercase;
   margin-bottom: 6px;
 }
@@ -1458,7 +1470,7 @@ img {
 }
 
 [id="contact"] .email {
-  color: rgba(185, 168, 152, 0.5);
+  color: rgba(57, 170, 170, 0.6);
 }
 
 /* Large desktop */
