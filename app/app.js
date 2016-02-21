@@ -28,7 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.use(session({ secret: 'so secret' }));
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(app.router);
+//app.use(app.router); deprecation warning
 
 app.use('/', routes);
 app.use('/users', users);
