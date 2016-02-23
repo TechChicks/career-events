@@ -24,9 +24,9 @@ app.use(passport.initialize())
 app.use(passport.session())
 app.use(app.router)
 
-if ('development' === app.get('env')) {
-	app.use(express.errorHandler())
-}
+// if ('development' === app.get('env')) {
+// 	app.use(express.errorHandler())
+// }
 
 app.get('/', routes.index)
 app.get('/home', application.IsAuthenticated, home.homepage)
