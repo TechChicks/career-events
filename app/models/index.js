@@ -1,9 +1,12 @@
-// var fs = require('fs')
-//  , path = require('path')
-//  , Sequelize = require('sequelize')
-//  , lodash = require('lodash')
-//  , sequelize = new Sequelize('goatjs', 'root', null)
-//  , db = {}
+var fs = require('fs')
+ , path = require('path')
+ , Sequelize = require('sequelize')
+ , lodash = require('lodash')
+ // , sequelize = new Sequelize('actw_development', 'swatson', {
+ //    host: 'localhost',
+ //    dialect: 'postgres'
+ //  })
+ , db = {}
 
 // fs
 //   .readdirSync(__dirname)
