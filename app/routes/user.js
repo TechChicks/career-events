@@ -1,39 +1,16 @@
-var bcrypt = require('bcrypt-nodejs')
-
-module.exports = function(sequelize, DataTypes) {
-	var User = sequelize.define('User', {
-		username: {type: DataTypes.STRING, unique: true, validate: {notNull: true, notEmpty: true}},
-		password: {type: DataTypes.STRING, validate: {notNull: true, notEmpty: true}}
-	},
-	{
-		classMethods: {
-			validPassword: function(password, passwd, done, user){
-				bcrypt.compare(password, passwd, function(err, isMatch){
-					if (err) console.log(err)
-					if (isMatch) {
-						return done(null, user)
-					} else {
-						return done(null, false)
-					}
-				})
-			}
-		}
-	},
-	{
-		dialect: 'postgres'
-	}
-);
-
-User.hook('beforeCreate', function(user, fn){
-	var salt = bcrypt.genSalt(SALT_WORK_FACTOR, function(err, salt){
-		return salt
-	});
-	bcrypt.hash(user.password, salt, null, function(err, hash){
-		if(err) return next(err);
-		user.password = hash;
-		return fn(null, user)
-	});
-})
-	
- return User	
+exports.signUp = function(req, res) {
+	res.render("signup.ejs");
 }
+
+exports.register = function(req, res){
+	db.User.find({where: {username: req.username}}).success(function (user){
+		if(!user) {
+			db.User.create({username: req.body.username, password: req.body.password}).error(function(err){
+				console.log(err);
+			});
+		} else {
+			res.redirect('/signup')
+		}
+	})
+	res.redirect('/')
+};

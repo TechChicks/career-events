@@ -55,27 +55,27 @@ app.post('/authenticate',
   })
 )
 app.get('/logout', application.destroySession)
-//app.get('/signup', user.signUp)
-//app.post('/register', user.register)
+app.get('/signup', user.signUp)
+app.post('/register', user.register)
 
-// db
-//   .sequelize
-//   .sync()
-//   .complete(function(err){
-//   if (err) {
-//     throw err[0]
-//   } else {
-//     db.User.find({where: {username: 'admin'}}).success(function (user){
-//       if (!user) {
-//         db.User.build({username: 'admin', password: 'admin'}).save();
-//       };
-//     });
-    
-//     http.createServer(app).listen(app.get('port'), function(){
-//       console.log('Express is listening on port ' + app.get('port'))
-//     });
-//   }
-// })
+db
+  .sequelize
+  //.sync()
+  // .complete(function(err){
+  //   if (err) {
+  //     throw err[0]
+  //   } else {
+  //     db.User.find({where: {username: 'swatson'}}).success(function (user){
+  //       if (!user) {
+  //         db.User.build({username: 'swatson', password: 't3chch1ck098!'}).save();
+  //       };
+  //     });
+      
+  //     http.createServer(app).listen(app.get('port'), function(){
+  //       console.log('Express is listening on port ' + app.get('port'))
+  //     });
+  //   }
+  // })
 
 // development error handler
 // will print stacktrace
