@@ -2,7 +2,6 @@ var express = require('express')
  , routesIndex = require('./routes/index')
  , app = express()
  , user = require('./routes/user')
- //, users = require('./routes/users')
  , db = require('./models')
  , path = require('path')
  , favicon = require('serve-favicon')
@@ -37,7 +36,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/', routesIndex);
-//app.use('/users', users);
 app.use(express.static('/public'));
 
 // catch 404 and forward to error handler
@@ -47,11 +45,10 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-app.get('/home', application.IsAuthenticated, home.homepage)
 app.post('/authenticate',
   passport.authenticate('local',{
-  successRedirect: '/home',
-  failureRedirect: '/'
+    successRedirect: '/',
+    failureRedirect: '/'
   })
 )
 app.get('/logout', application.destroySession)

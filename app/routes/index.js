@@ -1,5 +1,6 @@
-var express = require('express');
-var router = express.Router();
+var express = require('express')
+	, router = express.Router()
+	, application = require('./application');
 
 /* GET Main */
 router.get('/', function(req, res, next) {
@@ -7,7 +8,7 @@ router.get('/', function(req, res, next) {
 });
 
 /* GET Portland */
-router.get('/pdx', function(req, res, next) {
+router.get('/pdx', application.IsAuthenticated, function(req, res, next) {
   res.render('city-pages/pdx/index', { title: 'Portland ACT-W Conference', city: 'Portland' });
 });
 
