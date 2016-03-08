@@ -6,14 +6,15 @@ exports.signUp = function(req, res) {
 
 exports.register = function(req, res){
 	console.log('!!!REGISTER', req.body);
-	 db.User.find({where: {username: req.username}}) //.success(function (user){
-	// 	if(!user) {
-	// 		db.User.create({username: req.body.username, password: req.body.password}).error(function(err){
-	// 			console.log(err);
-	// 		});
-	// 	} else {
-	// 		res.redirect('/signup')
-	// 	}
-	// })
+	 db.User.find({where: {username: req.username}}).then(function (user){
+		if(!user) {
+			db.User.create({username: req.body.username, password: req.body.password}).error(function(err){
+				console.log('^^^^^^^^^^^^^',err);
+			});
+		} else {
+			res.redirect('/signup')
+		}
+		return null;
+	})
 	res.redirect('/pdx')
 };
