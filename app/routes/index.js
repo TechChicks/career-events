@@ -1,5 +1,6 @@
 var express = require('express')
 	, router = express.Router()
+	, user = require('./user')
 	, application = require('./application');
 
 /* GET Main */
@@ -46,5 +47,11 @@ router.get('/nyc', function(req, res, next) {
 router.get('/authenticate', function(req, res, next) {
   res.render('login');
 });
+
+router.get('/signup', function(req, res, next) {
+  res.render('signup');
+});
+
+router.post('/register', user.register)
 
 module.exports = router;

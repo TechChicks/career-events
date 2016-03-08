@@ -1,7 +1,9 @@
 exports.IsAuthenticated = function(req, res, next){
 	if(req.isAuthenticated()){
+		console.log('############');
 		next();
 	} else {
+		console.log('############');
 		next(new Error(401));
 	}
 }

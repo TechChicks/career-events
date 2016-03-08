@@ -1,0 +1,9 @@
+form(action="/register" method="post")#login-form.well.span4
+	p.subheading Please Login To Your Account
+	label Username 
+	input(type="text", name="user", id='username').span4.required
+	label Password
+	input(type="password", name="password", id='password').span4.required
+	button(type="submit")
+		i.icon-lock.icon-white
+		| Register

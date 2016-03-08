@@ -10,7 +10,7 @@ var express = require('express')
  , cookieParser = require('cookie-parser')
  , bodyParser = require('body-parser')
  , http = require('http')
- , home = require('./routes/home')
+ //, home = require('./routes/home')
  , application = require('./routes/application')
  , passport = require('passport')
  , passportConfig = require('./config/passport');
@@ -45,15 +45,15 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-app.post('/authenticate',
-  passport.authenticate('local',{
-    successRedirect: '/',
-    failureRedirect: '/'
-  })
-)
-app.get('/logout', application.destroySession)
-app.get('/signup', user.signUp)
-app.post('/register', user.register)
+// app.post('/authenticate',
+//   passport.authenticate('local',{
+//     successRedirect: '/',
+//     failureRedirect: '/'
+//   })
+// )
+// app.get('/logout', application.destroySession)
+// app.get('/signup', user.signUp)
+// app.post('/register', user.register)
 
 db
   .sequelize
