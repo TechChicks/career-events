@@ -57,7 +57,7 @@ app.use(function(req, res, next) {
 
 db
   .sequelize
-  //.sync()
+  .sync()
   // .complete(function(err){
   //   if (err) {
   //     throw err[0]
