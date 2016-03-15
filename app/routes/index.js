@@ -43,6 +43,11 @@ router.get('/nyc', function(req, res, next) {
   res.render('city-pages/nyc/index', { title: 'New York ACT-W Conference', city: 'New York City' });
 });
 
+/* GET Blog */
+router.get('/blog', function(req, res, next) {
+  res.render('homepage/blog');
+});
+
 /* AUTH */
 router.get('/authenticate', function(req, res, next) {
   res.render('login');
