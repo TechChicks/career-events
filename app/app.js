@@ -57,22 +57,7 @@ app.use(function(req, res, next) {
 
 db
   .sequelize
-  .sync()
-  // .complete(function(err){
-  //   if (err) {
-  //     throw err[0]
-  //   } else {
-  //     db.User.find({where: {username: 'swatson'}}).success(function (user){
-  //       if (!user) {
-  //         db.User.build({username: 'swatson', password: 't3chch1ck098!'}).save();
-  //       };
-  //     });
-      
-  //     http.createServer(app).listen(app.get('port'), function(){
-  //       console.log('Express is listening on port ' + app.get('port'))
-  //     });
-  //   }
-  // })
+  .sync({force: true})
 
 // development error handler
 // will print stacktrace
