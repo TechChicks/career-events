@@ -51,7 +51,7 @@ router.get('/nyc', function(req, res, next) {
 router.get('/blog', function(req, res, next) {
   this.blogs = db.Blog.findAll().then(function(blogs){
     console.log('SUCCESS!!', blogs);
-    res.render('homepage/blog', { title: 'New York ACT-W Conference', content: 'New York City' });    
+    res.render('homepage/blog', { title: 'New York ACT-W Conference', blogs: blogs });    
   });
   // });
 });
