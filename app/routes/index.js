@@ -1,5 +1,7 @@
-var express = require('express');
-var router = express.Router();
+var express = require('express')
+	, router = express.Router()
+	, user = require('./user')
+	, application = require('./application');
 
 /* GET Main */
 router.get('/', function(req, res, next) {
@@ -40,5 +42,16 @@ router.get('/chicago', function(req, res, next) {
 router.get('/nyc', function(req, res, next) {
   res.render('city-pages/nyc/index', { title: 'New York ACT-W Conference', city: 'New York City' });
 });
+
+/* AUTH */
+router.get('/authenticate', function(req, res, next) {
+  res.render('login');
+});
+
+router.get('/signup', function(req, res, next) {
+  res.render('signup');
+});
+
+router.post('/register', user.register)
 
 module.exports = router;

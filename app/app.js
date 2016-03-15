@@ -1,17 +1,24 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+var express = require('express')
+ , routesIndex = require('./routes/index')
+ , app = express()
+ , user = require('./routes/user')
+ , db = require('./models')
+ , path = require('path')
+ , favicon = require('serve-favicon')
+ , logger = require('morgan')
+ , session = require('express-session')
+ , cookieParser = require('cookie-parser')
+ , bodyParser = require('body-parser')
+ , http = require('http')
+ //, home = require('./routes/home')
+ , application = require('./routes/application')
+ , passport = require('passport')
+ , passportConfig = require('./config/passport');
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
-
-var app = express();
+SALT_WORK_FACTOR = 12;
 
 app.listen(5000);
-
+//app.use('/public', express.static(__dirname+'/public'));
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -24,8 +31,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
-app.use('/users', users);
+app.use(session({ secret: 'so secret' }));
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use('/', routesIndex);
 app.use(express.static('/public'));
 
 // catch 404 and forward to error handler
@@ -35,7 +45,19 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-// error handlers
+// app.post('/authenticate',
+//   passport.authenticate('local',{
+//     successRedirect: '/',
+//     failureRedirect: '/'
+//   })
+// )
+// app.get('/logout', application.destroySession)
+// app.get('/signup', user.signUp)
+// app.post('/register', user.register)
+
+db
+  .sequelize
+  .sync({force: true})
 
 // development error handler
 // will print stacktrace
