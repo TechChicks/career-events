@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
 });
 
 /* GET Portland */
-router.get('/pdx', application.IsAuthenticated, function(req, res, next) {
+router.get('/pdx', function(req, res, next) {
   res.render('city-pages/pdx/index', { title: 'Portland ACT-W Conference', city: 'Portland' });
 });
 
