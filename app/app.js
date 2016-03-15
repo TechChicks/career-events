@@ -57,7 +57,7 @@ app.use(function(req, res, next) {
 
 db
   .sequelize
-  .sync({force: true})
+  .sync()
 
 // development error handler
 // will print stacktrace

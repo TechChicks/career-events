@@ -1,7 +1,11 @@
 var express = require('express')
 	, router = express.Router()
 	, user = require('./user')
+  , db = require('../models')
+  , Blog = require('../models/blog')
 	, application = require('./application');
+
+  var models = require('../models');
 
 /* GET Main */
 router.get('/', function(req, res, next) {
@@ -45,7 +49,11 @@ router.get('/nyc', function(req, res, next) {
 
 /* GET Blog */
 router.get('/blog', function(req, res, next) {
-  res.render('homepage/blog');
+  this.blogs = db.Blog.findAll().then(function(blogs){
+    console.log('SUCCESS!!', blogs);
+    res.render('homepage/blog', { title: 'New York ACT-W Conference', content: 'New York City' });    
+  });
+  // });
 });
 
 /* AUTH */
