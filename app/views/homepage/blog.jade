@@ -1,14 +1,12 @@
 section#blog
 	h2 Blog
 
-	p.callout Please post about your experience at ACT-W! This can be a post about the entire weekend or a workshop/talk that made a significant impact on you. This blog is open to the public and is an exceptional forum for those who are dedicated to the advancement of women in technology. Whether entry level or executive, we welcome all professionals in the industry to contribute to the conversation!
+	p.callout Please post about your experience at ACT-W! This can be a post about the entire weekend or a workshop/talk that made a significant impact on you.
 
-	h3 Recent Posts
-	
 	each blog in blogs
+		h3 Posted by: 
+			= blog.username
 		h2
 			= blog.title 
 		p
 			= blog.blogContent
-		p Posted by:
-			= blog.username
