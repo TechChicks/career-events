@@ -9,7 +9,10 @@ var express = require('express')
 
 /* GET Main */
 router.get('/', function(req, res, next) {
-  res.render('homepage/index', { title: 'The ACT-W Conference Home Page' });
+  this.blogs = db.Blog.findAll().then(function(blogs){
+    console.log('SUCCESS!!', blogs);
+    res.render('homepage/index', { title: 'The ACT-W Conference Home Page', blogs: blogs });    
+  });
 });
 
 /* GET Portland */
@@ -51,9 +54,8 @@ router.get('/nyc', function(req, res, next) {
 router.get('/blog', function(req, res, next) {
   this.blogs = db.Blog.findAll().then(function(blogs){
     console.log('SUCCESS!!', blogs);
-    res.render('homepage/blog', { title: 'New York ACT-W Conference', blogs: blogs });    
+    res.render('homepage/blog', { blogs: blogs });    
   });
-  // });
 });
 
 /* AUTH */
