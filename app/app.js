@@ -1,7 +1,6 @@
 var express = require('express')
  , routesIndex = require('./routes/index')
  , app = express()
- , user = require('./routes/user')
  , db = require('./models')
  , path = require('path')
  , favicon = require('serve-favicon')
@@ -44,16 +43,6 @@ app.use(function(req, res, next) {
   err.status = 404;
   next(err);
 });
-
-// app.post('/authenticate',
-//   passport.authenticate('local',{
-//     successRedirect: '/',
-//     failureRedirect: '/'
-//   })
-// )
-// app.get('/logout', application.destroySession)
-// app.get('/signup', user.signUp)
-// app.post('/register', user.register)
 
 db
   .sequelize
