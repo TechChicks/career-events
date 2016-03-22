@@ -1,7 +1,9 @@
 
 /*This file is not currently being used, 
 but is a good template and may hold the working db code someday*/
-
+// exports.homepage = function(req, res){
+// 	res.render("homepage.ejs", { myVar: req.user.username })
+// }
 
 // var Sequelize = require('sequelize');
 // // var pg = require('pg').native;
