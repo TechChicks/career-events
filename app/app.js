@@ -9,7 +9,6 @@ var express = require('express')
  , cookieParser = require('cookie-parser')
  , bodyParser = require('body-parser')
  , http = require('http')
- //, home = require('./routes/home')
  , application = require('./routes/application')
  , passport = require('passport')
  , passportConfig = require('./config/passport');
@@ -17,7 +16,7 @@ var express = require('express')
 SALT_WORK_FACTOR = 12;
 
 app.listen(5000);
-//app.use('/public', express.static(__dirname+'/public'));
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');

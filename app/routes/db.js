@@ -1,23 +1,11 @@
 
 /*This file is not currently being used, 
 but is a good template and may hold the working db code someday*/
+
+
 // exports.homepage = function(req, res){
 // 	res.render("homepage.ejs", { myVar: req.user.username })
 // }
-
-// var Sequelize = require('sequelize');
-// // var pg = require('pg').native;
-// var pg = require('pg');
-// var passport = require("passport");
-// var PassportLocalStrategy = require('passport-local').Strategy;
-// var connectionString = require('../config.json');
-
-// // var sequelize = new Sequelize('actw_development', 'swatson', {
-// //   host: 'localhost',
-// //   dialect: 'postgres'
-// // });
-
-// var sequelize = new Sequelize(connectionString.postgres);
 
 // var User = sequelize.define('user', {
 //   username: Sequelize.STRING,

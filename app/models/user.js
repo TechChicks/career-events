@@ -1,3 +1,4 @@
+//Sequelize model
 var bcrypt = require('bcrypt-nodejs')
 
 module.exports = function(sequelize, DataTypes) {

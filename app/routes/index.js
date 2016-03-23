@@ -8,9 +8,14 @@ var express = require('express')
 
 /* GET Main */
 router.get('/', function(req, res, next) {
-  db.Blog.findAll().then(function(blogs){
-    res.render('homepage/index', { title: 'The ACT-W Conference Home Page', blogs: blogs });    
-  });
+  db.Blog.findAll()
+          .then(function(blogs){
+            res.render('homepage/index', { title: 'The ACT-W Conference Home Page', blogs: blogs });    
+          })
+          .catch(function(){
+            console.error('Blog lookup failed!');
+            res.render('homepage/index', { title: 'The ACT-W Conference Home Page', blogs: null });
+          })
 });
 
 /* GET Portland */
