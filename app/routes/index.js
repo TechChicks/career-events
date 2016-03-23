@@ -8,7 +8,7 @@ var express = require('express')
 
 /* GET Main */
 router.get('/', function(req, res, next) {
-  db.Blog.findAll()
+  db.Blog.findAll()  //{ where: {id: 1}} limit to top 2 chosen, shorter posts
           .then(function(blogs){
             res.render('homepage/index', { title: 'The ACT-W Conference Home Page', blogs: blogs });    
           })
@@ -55,10 +55,14 @@ router.get('/nyc', function(req, res, next) {
 
 /* GET Blog */
 router.get('/blog', function(req, res, next) {
-  this.blogs = db.Blog.findAll().then(function(blogs){
-    console.log('SUCCESS!!', blogs);
-    res.render('homepage/blog', { blogs: blogs });    
-  });
+  db.Blog.findAll()
+          .then(function(blogs){
+            res.render('homepage/blog', { blogs: blogs });    
+          })
+          .catch(function(){
+            console.error('Blog lookup failed!');
+            res.render('homepage/blog', { title: 'The ACT-W Conference Home Page', blogs: null });
+          })
 });
 
 /* AUTH */
