@@ -1,7 +1,15 @@
 var db = require('../models')
+var passport = require('passport');
 
-exports.signUp = function(req, res) {
-	res.render('signup');
+// app.post('/authenticate',
+//   passport.authenticate('local',{
+// 	successRedirect: '/',
+// 	failureRedirect: '/'
+//   })
+// )
+
+exports.authenticate = function(req, res) {
+	console.log('~~~~~~~AUTHENTICATE~~~~~~~');
 }
 
 exports.register = function(req, res){

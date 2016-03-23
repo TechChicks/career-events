@@ -66,14 +66,15 @@ router.get('/blog', function(req, res, next) {
 });
 
 /* AUTH */
-router.get('/authenticate', function(req, res, next) {
+router.get('/login', function(req, res, next) {
   res.render('login');
 });
+router.post('/authenticate', user.authenticate)
 
 router.get('/signup', function(req, res, next) {
   res.render('signup');
 });
-
 router.post('/register', user.register)
+
 
 module.exports = router;
