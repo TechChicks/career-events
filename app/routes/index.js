@@ -2,6 +2,7 @@ var express = require('express')
 	, router = express.Router()
 	, user = require('./user')
   , db = require('../models')
+  , passport = require('passport')
 	, application = require('./application');
 
   var models = require('../models');
@@ -69,7 +70,9 @@ router.get('/blog', function(req, res, next) {
 router.get('/login', function(req, res, next) {
   res.render('login');
 });
-router.post('/authenticate', user.authenticate)
+//router.post('/authenticate', user.authenticate);
+router.post('/authenticate', 
+  passport.authenticate('local', { successRedirect: '/', failureRedirect: '/login' }));
 
 router.get('/signup', function(req, res, next) {
   res.render('signup');
