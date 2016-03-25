@@ -3,9 +3,9 @@ var express = require('express')
 	, user = require('./user')
   , db = require('../models')
   , passport = require('passport')
+  , LocalStrategy = require('passport-local').Strategy
 	, application = require('./application');
 
-  var models = require('../models');
 
 /* GET Main */
 router.get('/', function(req, res, next) {
@@ -70,9 +70,7 @@ router.get('/blog', function(req, res, next) {
 router.get('/login', function(req, res, next) {
   res.render('login');
 });
-//router.post('/authenticate', user.authenticate);
-router.post('/authenticate', 
-  passport.authenticate('local', { successRedirect: '/', failureRedirect: '/login' }));
+router.post('/authenticate', user.authenticate);
 
 router.get('/signup', function(req, res, next) {
   res.render('signup');
