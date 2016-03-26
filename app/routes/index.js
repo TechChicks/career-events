@@ -15,7 +15,7 @@ router.get('/', function(req, res, next) {
           })
           .catch(function(){
             console.error('Blog lookup failed!');
-            res.render('homepage/index', { title: 'The ACT-W Conference Home Page', blogs: null });
+            res.render('homepage/index', { title: 'The ACT-W Conference Home Page' });
           })
 });
 

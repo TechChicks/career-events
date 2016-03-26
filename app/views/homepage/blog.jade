@@ -1,12 +1,13 @@
 section#blog
-	h2 Blog
+	if blogs
+		h2 Blog
 
-	each blog in blogs
-		h3 Posted by: 
-			= blog.username
-		h2
-			= blog.title 
-		p
-			= blog.blogContent
+		each blog in blogs
+			h3 Posted by: 
+				= blog.username
+			h2
+				= blog.title 
+			p
+				= blog.blogContent
 
-	p.callout click here to read more blog posts
+	p.callout click here to read blog posts
