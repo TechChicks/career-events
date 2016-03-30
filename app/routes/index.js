@@ -56,8 +56,9 @@ router.get('/nyc', function(req, res, next) {
 
 /* GET Blog */
 router.get('/blog', function(req, res, next) {
-  db.Blog.findAll()
+  db.Blog.findAll({ include: db.BlogRxn})
           .then(function(blogs){
+            console.log('$$$$blogs', blogs);
             res.render('homepage/blog', { blogs: blogs });    
           })
           .catch(function(){

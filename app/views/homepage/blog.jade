@@ -8,7 +8,9 @@ section#blog
 			h2
 				= blog.title 
 			p
-				= blog.blogContent
+				= blog.getBlogRxns()
+
+
 			ul
 				li
 					a(href='/') Like
