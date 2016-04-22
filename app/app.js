@@ -9,7 +9,6 @@ var express = require('express')
  , cookieParser = require('cookie-parser')
  , bodyParser = require('body-parser')
  , http = require('http')
- , application = require('./routes/application')
  , passport = require('passport')
  , passportConfig = require('./config/passport');
 
