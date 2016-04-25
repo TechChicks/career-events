@@ -11,12 +11,19 @@ var express = require('express')
 router.get('/', function(req, res, next) {
   db.Blog.findAll()  //{ where: {id: 1}} limit to top 2 chosen, shorter posts
           .then(function(blogs){
+            console.log('########user: req.user', user)
             res.render('homepage/index', { title: 'The ACT-W Conference Home Page', blogs: blogs });    
           })
           .catch(function(){
             console.error('Blog lookup failed!');
             res.render('homepage/index', { title: 'The ACT-W Conference Home Page' });
           })
+  var sess = req.session;
+  if (sess.views)
+    sess.views++;
+  else
+    sess.views = 1;
+  console.log('Homepage session views', sess.views);
 });
 
 /* GET Portland */
@@ -68,6 +75,12 @@ router.get('/blog', function(req, res, next) {
 
 /* AUTH */
 router.get('/login', function(req, res, next) {
+  res.render('login');
+});
+router.get('/logout', function(req, res, next) {
+  req.session.destroy(function(err) {
+    console.log('Session destroyed'); 
+  })
   res.render('login');
 });
 router.post('/authenticate', user.authenticate);
