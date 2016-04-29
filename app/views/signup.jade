@@ -1,9 +1,19 @@
-form(action="/register" method="post")#login-form.well.span4
-	p.subheading Register for a New Account
-	label Username 
-	input(type="text", name="user", id='username').span4.required
-	label Password
-	input(type="password", name="password", id='password').span4.required
-	button(type="submit")
-		i.icon-lock.icon-white
-		| Register
+extends layout
+
+block content
+  body.signup
+    include homepage/navbar
+    main
+      section#login
+        form(action="/register" method="post")#login-form.well.span4
+          h1.subheading Login
+          div
+            label Username
+            input(type="text", name="user", id='username').span4.required
+          div
+            label Password
+            input(type="password", name="password", id='password').span4.required
+          div
+            button(type="submit")
+              i.icon-lock.icon-white
+              | Register
