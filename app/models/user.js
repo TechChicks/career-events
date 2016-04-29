@@ -8,16 +8,18 @@ module.exports = function(sequelize, DataTypes) {
 	},
 	{
 		classMethods: {
-			isValidPassword: function(password, passwd, done, user){
-				bcrypt.compare(password, passwd, function(err, isMatch){
-					if (err) console.log(err)
-					if (isMatch) {
-						return done(null, user)
-					} else {
-						return done(null, false)
-					}
-				})
-			}
+			isValidPassword: function(password, passwd){
+				console.log('db.User.isValidPassword')
+				// bcrypt.compare(password, passwd, function(err, isMatch){
+				// 	if (err) console.log(err)
+				// 	if (isMatch) {
+				// 		return true;
+				// 	} else {
+				// 		return false;
+				// 	}
+				// })
+				return password === passwd;
+			},
 		}
 	},
 	{
@@ -32,9 +34,8 @@ module.exports = function(sequelize, DataTypes) {
 // 	bcrypt.hash(user.password, salt, null, function(err, hash){
 // 		if(err) return next(err);
 // 		user.password = hash;
-// 		return fn(null, user)
 // 	});
 // })
 	
- return User	
+ return User;	
 }
