@@ -3,12 +3,12 @@ var bcrypt = require('bcrypt-nodejs')
 
 module.exports = function(sequelize, DataTypes) {
 	var User = sequelize.define('User', {
-		username: {type: DataTypes.STRING, unique: true, validate: {notNull: true, notEmpty: true}},
-		password: {type: DataTypes.STRING, validate: {notNull: true, notEmpty: true}}
+		username: {type: DataTypes.STRING},
+		password: {type: DataTypes.STRING}
 	},
 	{
 		classMethods: {
-			validPassword: function(password, passwd, done, user){
+			isValidPassword: function(password, passwd, done, user){
 				bcrypt.compare(password, passwd, function(err, isMatch){
 					if (err) console.log(err)
 					if (isMatch) {

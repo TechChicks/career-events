@@ -2,19 +2,20 @@ var express = require('express')
 	, router = express.Router()
 	, user = require('./user')
   , db = require('../models')
+  , passport = require('passport')
+  , LocalStrategy = require('passport-local').Strategy
 	, application = require('./application');
 
-  var models = require('../models');
 
 /* GET Main */
 router.get('/', function(req, res, next) {
-  db.Blog.findAll()
+  db.Blog.findAll()  //{ where: {id: 1}} limit to top 2 chosen, shorter posts
           .then(function(blogs){
             res.render('homepage/index', { title: 'The ACT-W Conference Home Page', blogs: blogs });    
           })
           .catch(function(){
             console.error('Blog lookup failed!');
-            res.render('homepage/index', { title: 'The ACT-W Conference Home Page', blogs: null });
+            res.render('homepage/index', { title: 'The ACT-W Conference Home Page' });
           })
 });
 
@@ -55,21 +56,26 @@ router.get('/nyc', function(req, res, next) {
 
 /* GET Blog */
 router.get('/blog', function(req, res, next) {
-  this.blogs = db.Blog.findAll().then(function(blogs){
-    console.log('SUCCESS!!', blogs);
-    res.render('homepage/blog', { blogs: blogs });    
-  });
+  db.Blog.findAll()
+          .then(function(blogs){
+            res.render('homepage/blog', { blogs: blogs });    
+          })
+          .catch(function(){
+            console.error('Blog lookup failed!');
+            res.render('homepage/blog', { title: 'The ACT-W Conference Home Page', blogs: null });
+          })
 });
 
 /* AUTH */
-router.get('/authenticate', function(req, res, next) {
+router.get('/login', function(req, res, next) {
   res.render('login');
 });
+router.post('/authenticate', user.authenticate);
 
 router.get('/signup', function(req, res, next) {
   res.render('signup');
 });
-
 router.post('/register', user.register)
+
 
 module.exports = router;
