@@ -9,8 +9,6 @@ var express = require('express')
  , cookieParser = require('cookie-parser')
  , bodyParser = require('body-parser')
  , http = require('http')
- , passport = require('passport')
- , passportConfig = require('./config/passport');
 
 SALT_WORK_FACTOR = 12;
 
@@ -30,8 +28,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(require('serve-static')(__dirname + path.join(__dirname, 'public')));
 app.use(session({ secret: 'actw secret' }));
-app.use(passport.initialize());
-app.use(passport.session());
 
 app.use('/', routesIndex);
 app.use(express.static('/public'));

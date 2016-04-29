@@ -9,13 +9,13 @@ var fs = require('fs')
 fs
   .readdirSync(__dirname)
   .filter(function(file) {
-	return (file.indexOf('.') !== 0) && (file !== 'index.js')
-   })
-   .forEach(function(file) {
+	   return (file.indexOf('.') !== 0) && (file !== 'index.js')
+  })
+  .forEach(function(file) {
    	 var model = sequelize.import(path.join(__dirname, file))
-	 db[model.name] = model
-    console.log('Created model', model)
-   })
+	   db[model.name] = model
+     console.log('Created model', model)
+  })
 
 module.exports = lodash.extend({
 	sequelize: sequelize, 

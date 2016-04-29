@@ -2,10 +2,6 @@ var express = require('express')
 	, router = express.Router()
 	, user = require('./user')
   , db = require('../models')
-  , passport = require('passport')
-  , LocalStrategy = require('passport-local').Strategy
-	, application = require('./application');
-
 
 /* GET Main */
 router.get('/', function(req, res, next) {
@@ -77,11 +73,8 @@ router.get('/blog', function(req, res, next) {
 router.get('/login', function(req, res, next) {
   res.render('login');
 });
-router.post('/login', 
-  passport.authenticate('local', { failureRedirect: '/login' }),
-  function(req, res) {
-    res.redirect('/');
-  });
+
+router.post('/login', user.authenticate);
 
 router.get('/logout', function(req, res, next) {
   req.session.destroy(function(err) {
@@ -90,8 +83,6 @@ router.get('/logout', function(req, res, next) {
   })
   res.render('login');
 });
-
-router.post('/authenticate', user.authenticate);
 
 router.get('/signup', function(req, res, next) {
   res.render('signup');

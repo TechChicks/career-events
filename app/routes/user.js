@@ -12,7 +12,7 @@ exports.authenticate = function(req, res) {
 		  	}
 		  	else {
 		  		//validate password
-		  		console.log('user', user.password)
+		  		console.log('user', user)
 		  		if (db.User.isValidPassword(req.body.pass,user.password))
 						res.redirect('/');
 					else

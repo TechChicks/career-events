@@ -9,6 +9,7 @@ module.exports = function(sequelize, DataTypes) {
 	{
 		classMethods: {
 			isValidPassword: function(password, passwd){
+				console.log('db.User.isValidPassword')
 				// bcrypt.compare(password, passwd, function(err, isMatch){
 				// 	if (err) console.log(err)
 				// 	if (isMatch) {
@@ -18,7 +19,7 @@ module.exports = function(sequelize, DataTypes) {
 				// 	}
 				// })
 				return password === passwd;
-			}
+			},
 		}
 	},
 	{
