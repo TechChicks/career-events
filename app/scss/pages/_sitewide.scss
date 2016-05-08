@@ -71,6 +71,30 @@ img {
     padding: 10px;
     background-color: white;
   }
+
+  ul.submittedreactions {
+    border-radius: 10px;
+    width: 325px;
+    float: left;
+  }
+  ul.submittedreactions > li {
+    display: inline-block;
+    margin: 0;
+    padding: 1px;
+  }
+  ul.submittedreactions > li img { 
+    width: 20px;
+    height: 20px;
+    margin: 0;
+  }
+  ul.submittedreactions > li p { 
+    display: block;
+    text-align: center;
+    margin: 0;
+    line-height: .6em;
+    font-size: .6em;
+  }
+
   ul.reactions {
     border: 2px solid #DADADA;
     border-radius: 10px;

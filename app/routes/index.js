@@ -61,6 +61,7 @@ router.get('/nyc', function(req, res, next) {
 router.get('/blog', function(req, res, next) {
   db.Blog.findAll({ include: db.BlogRxn})
           .then(function(blogs){
+            console.log('@@@@blog', db.BlogRxn);
             res.render('blog', { title: 'The ACT-W Conference Blog Page', blogs: blogs });    
           })
           .catch(function(){
