@@ -2,21 +2,24 @@ var express = require('express')
 	, router = express.Router()
 	, user = require('./user')
   , db = require('../models')
-  , passport = require('passport')
-  , LocalStrategy = require('passport-local').Strategy
-	, application = require('./application');
-
 
 /* GET Main */
 router.get('/', function(req, res, next) {
   db.Blog.findAll()  //{ where: {id: 1}} limit to top 2 chosen, shorter posts
           .then(function(blogs){
+            console.log('########user: req.user', user)
             res.render('homepage/index', { title: 'The ACT-W Conference Home Page', blogs: blogs });    
           })
           .catch(function(){
             console.error('Blog lookup failed!');
             res.render('homepage/index', { title: 'The ACT-W Conference Home Page' });
           })
+  var sess = req.session;
+  if (sess.views)
+    sess.views++;
+  else
+    sess.views = 1;
+  console.log('Homepage session views', sess.views);
 });
 
 /* GET Portland */
@@ -71,12 +74,26 @@ router.get('/blog', function(req, res, next) {
 router.get('/login', function(req, res, next) {
   res.render('login');
 });
-router.post('/authenticate', user.authenticate);
+
+router.post('/login', user.authenticate);
+
+router.get('/logout', function(req, res, next) {
+  req.session.destroy(function(err) {
+    //TODO: pop up that says you have been logged out
+    console.log('Session destroyed'); 
+  })
+  res.render('login');
+});
 
 router.get('/signup', function(req, res, next) {
   res.render('signup');
 });
 router.post('/register', user.register)
 
+// app.get('/profile',
+//   require('connect-ensure-login').ensureLoggedIn(),
+//   function(req, res){
+//     res.render('profile', { user: req.user });
+//   });
 
 module.exports = router;

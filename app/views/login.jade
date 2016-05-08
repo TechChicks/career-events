@@ -1,16 +1,19 @@
-form(action="/authenticate" method="post")#login-form.well.span4
-	p.subheading Please Login To Your Account
-	label Username 
-	input(type="text", name="user", id='user-tf').span4.required
-	label Password
-	input(type="password", name="pass", id='pass-tf').span4.required
-	button(type="submit")#btn-login.btn.btn-primary
-		i.icon-lock.icon-white
-		| Sign in
-	label#remember-me.checkbox Remember Me
-		input(type="checkbox", checked='checked')
-	div.clear-fix
-	hr
-	div.btm-links
-		a(href='#')#forgot-password Forgot Your Password?
-		a(href='/signup')#create-account Create An Account
+extends layout
+
+block content
+  body.signup
+    include homepage/navbar
+    main
+      section#login
+        form(action="/login" method="post")#login-form.well.span4
+          h1.subheading Login to an existing account
+          div
+            label Username
+            input(type="text", name="user", id='username').span4.required
+          div
+            label Password
+            input(type="password", name="password", id='password').span4.required
+          div
+            button(type="submit")
+              i.icon-lock.icon-white
+              | Login
