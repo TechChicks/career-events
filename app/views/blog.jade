@@ -1,7 +1,7 @@
 extends layout
 
 block content
-	body.signup
+	body.blog
 		include homepage/navbar
 		main
 			section#blog
@@ -18,18 +18,20 @@ block content
 							= blog.getBlogRxns()
 
 
-						ul
+						ul.reactions
 							li
-								a(href='/') Like
+								img(src='/images/reactions/like.png')
 							li
-								a(href='/') Love
+								img(src='/images/reactions/love.png')
 							li
-								a(href='/') Haha
+								img(src='/images/reactions/thanks.png')
 							li
-								a(href='/') Wow
+								img(src='/images/reactions/haha.png')
 							li
-								a(href='/') Sad
+								img(src='/images/reactions/wow.png')
 							li
-								a(href='/') Angry
+								img(src='/images/reactions/sad.png')
+							li
+								img(src='/images/reactions/angry.png')
 
 				p.callout click here to read blog posts
