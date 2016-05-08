@@ -1,0 +1,35 @@
+extends layout
+
+block content
+	body.signup
+		include homepage/navbar
+		main
+			section#blog
+				h1 #{title}
+				if blogs
+					h2 Blog
+
+					each blog in blogs
+						h3 Posted by: 
+							= blog.username
+						h2
+							= blog.title 
+						p
+							= blog.getBlogRxns()
+
+
+						ul
+							li
+								a(href='/') Like
+							li
+								a(href='/') Love
+							li
+								a(href='/') Haha
+							li
+								a(href='/') Wow
+							li
+								a(href='/') Sad
+							li
+								a(href='/') Angry
+
+				p.callout click here to read blog posts
