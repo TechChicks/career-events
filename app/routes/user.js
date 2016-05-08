@@ -1,6 +1,4 @@
 var db = require('../models')
-var passport = require('passport');
-var LocalStrategy = require('passport-local').Strategy;
 
 exports.authenticate = function(req, res) {
 	console.log('~~~~~~~AUTHENTICATE~~~~~~~', req.body);

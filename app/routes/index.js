@@ -61,12 +61,21 @@ router.get('/nyc', function(req, res, next) {
 router.get('/blog', function(req, res, next) {
   db.Blog.findAll({ include: db.BlogRxn})
           .then(function(blogs){
-            console.log('@@@@blog', db.BlogRxn);
-            res.render('blog', { title: 'The ACT-W Conference Blog Page', blogs: blogs });    
+            console.log('TODO: BlogRxn', db.BlogRxn);
+            res.render('blog', 
+              { 
+                title: 'The ACT-W Conference Blog Page', 
+                blogs: blogs, 
+                blogRxns: 'hey' 
+              });    
           })
           .catch(function(){
             console.error('Blog lookup failed!');
-            res.render('blog', { title: 'The ACT-W Conference Blog Page', blogs: null });
+            res.render('blog', 
+              { 
+                title: 'The ACT-W Conference Blog Page', 
+                blogs: null 
+              });
           })
 });
 

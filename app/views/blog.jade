@@ -14,12 +14,12 @@ block content
 							p #{blog.blogContent}
 
 							ul.submittedreactions
-								if blog.blogRxns
+								if blogRxns
 									console.log('TODO: BlogRxn', blog.blogRxns)
 
 							ul.reactions
 								li
-									a(href='/clickedlikelink')
+									button(data-action='clickedlikelink')
 										img(src='/images/reactions/like.png')
 										p Like
 								li

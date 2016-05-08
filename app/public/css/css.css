@@ -1379,6 +1379,11 @@ img {
   display: inline-block;
   margin: 0;
   padding: 1px;
+  border: none;
+}
+
+[id="blog"] ul.submittedreactions > li > button {
+  border: none;
 }
 
 [id="blog"] ul.submittedreactions > li img {
@@ -1407,6 +1412,11 @@ img {
   display: inline-block;
   margin: 0;
   padding: 2px;
+}
+
+[id="blog"] ul.reactions > li > button {
+  border: none;
+  background-color: #DADADA;
 }
 
 [id="blog"] ul.reactions > li img {

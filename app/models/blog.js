@@ -17,6 +17,13 @@ module.exports = function(sequelize, DataTypes) {
 			rxn: {type: DataTypes.STRING}
 		},
 		{
+			classMethods: {
+				getBlogRxnsByBlogId: function(blogid){
+					console.log('blogid',blogid)
+				}
+			}
+		},
+		{
 			dialect: 'postgres'
 		}
 	);

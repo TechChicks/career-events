@@ -81,6 +81,10 @@ img {
     display: inline-block;
     margin: 0;
     padding: 1px;
+    border: none;
+  }
+  ul.submittedreactions > li > button {
+    border: none;
   }
   ul.submittedreactions > li img { 
     width: 20px;
@@ -106,6 +110,10 @@ img {
     display: inline-block;
     margin: 0;
     padding: 2px;
+  }
+  ul.reactions > li > button {
+    border: none;
+    background-color: #DADADA;
   }
   ul.reactions > li img { 
     width: 40px;
