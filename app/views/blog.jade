@@ -8,12 +8,9 @@ block content
 				h1 #{title}
 				if blogs
 					each blog in blogs
-						h3 Posted by: 
-							= blog.username
-						h2
-							= blog.title 
-						p
-							= blog.getBlogRxns().rxn
+						h3 Posted by: #{blog.username)
+						h2 #{blog.title} 
+						p #{blog.blogContent}
 
 
 						ul.reactions
