@@ -1361,13 +1361,35 @@ img {
   color: #FFF;
 }
 
+[id="blog"] ul.reactions {
+  border: 2px solid #DADADA;
+  border-radius: 10px;
+  width: 325px;
+  background-color: #DADADA;
+}
+
 [id="blog"] ul.reactions > li {
-  display: inline;
+  display: inline-block;
+  margin: 0;
+  padding: 2px;
 }
 
 [id="blog"] ul.reactions > li img {
   width: 40px;
   height: 40px;
+  margin: 0;
+}
+
+[id="blog"] ul.reactions > li p {
+  display: none;
+}
+
+[id="blog"] ul.reactions > li:hover p {
+  display: block;
+  text-align: center;
+  margin: 0;
+  line-height: .7em;
+  font-size: .7em;
 }
 
 [id="sponsors"] {
