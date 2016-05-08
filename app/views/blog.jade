@@ -8,31 +8,35 @@ block content
 				h1 #{title}
 				if blogs
 					each blog in blogs
-						h3 Posted by: #{blog.username)
-						h2 #{blog.title} 
-						p #{blog.blogContent}
+						div.blog
+							h2 #{blog.title}
+							h3 Posted by: #{blog.username) 
+							p #{blog.blogContent}
 
+							ul.submittedreactions
+								if blog.getRxns
+									console.log('####blog', blog)
 
-						ul.reactions
-							li
-								img(src='/images/reactions/like.png')
-								p Like
-							li
-								img(src='/images/reactions/love.png')
-								p Love
-							li
-								img(src='/images/reactions/thanks.png')
-								p Thanks
-							li
-								img(src='/images/reactions/haha.png')
-								p Haha
-							li
-								img(src='/images/reactions/wow.png')
-								p Wow
-							li
-								img(src='/images/reactions/sad.png')
-								p Sad
-							li
-								img(src='/images/reactions/angry.png')
-								p Angry
+							ul.reactions
+								li
+									img(src='/images/reactions/like.png')
+									p Like
+								li
+									img(src='/images/reactions/love.png')
+									p Love
+								li
+									img(src='/images/reactions/thanks.png')
+									p Thanks
+								li
+									img(src='/images/reactions/haha.png')
+									p Haha
+								li
+									img(src='/images/reactions/wow.png')
+									p Wow
+								li
+									img(src='/images/reactions/sad.png')
+									p Sad
+								li
+									img(src='/images/reactions/angry.png')
+									p Angry
 			include homepage/contact
