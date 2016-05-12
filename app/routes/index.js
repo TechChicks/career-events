@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
   db.Blog.findAll()  //{ where: {id: 1}} limit to top 2 chosen, shorter posts
           .then(function(blogs){
             console.log('########user: req.user', user)
-            res.render('homepage/index', { title: 'The ACT-W Conference Home Page', blogs: blogs });    
+            res.render('homepage/index', { title: 'The ACT-W Conference Home Page', blogs: blogs });
           })
           .catch(function(){
             console.error('Blog lookup failed!');
@@ -59,24 +59,22 @@ router.get('/nyc', function(req, res, next) {
 
 /* GET Blog */
 router.get('/blog', function(req, res, next) {
-  db.Blog.findAll({ include: db.BlogRxn})
-          .then(function(blogs){
-            console.log('TODO: BlogRxn', db.BlogRxn);
-            res.render('blog', 
-              { 
-                title: 'The ACT-W Conference Blog Page', 
-                blogs: blogs, 
-                blogRxns: 'hey' 
-              });    
-          })
-          .catch(function(){
-            console.error('Blog lookup failed!');
-            res.render('blog', 
-              { 
-                title: 'The ACT-W Conference Blog Page', 
-                blogs: null 
-              });
-          })
+    db.Blog.findAll({ include: db.BlogRxn })
+        .then(function(blogs){
+            res.render('blog',
+                       {
+                           title: 'The ACT-W Conference Blog Page',
+                           blogs: blogs,
+                       });
+        })
+        // .catch(function(){
+        //     console.error('Reaction lookup failed!');
+        //     res.render('blog',
+        //                {
+        //                    title: 'The ACT-W Conference Blog Page',
+        //                    blogs: null
+        //                });
+        // })
 });
 
 /* AUTH */
@@ -89,7 +87,7 @@ router.post('/login', user.authenticate);
 router.get('/logout', function(req, res, next) {
   req.session.destroy(function(err) {
     //TODO: pop up that says you have been logged out
-    console.log('Session destroyed'); 
+    console.log('Session destroyed');
   })
   res.render('login');
 });
