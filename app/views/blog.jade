@@ -1,0 +1,49 @@
+extends layout
+
+block content
+	body.blog
+		include homepage/navbar
+		main
+			section#blog
+				h1 #{title}
+				if blogs
+					each blog in blogs
+						div.blog
+							h2 #{blog.title}
+							h3 Posted by: #{blog.username) 
+							p #{blog.blogContent}
+
+							ul.submittedreactions
+								if blogRxns
+									console.log('TODO: BlogRxn', blog.blogRxns)
+
+							ul.reactions
+								li
+									button(data-action='clickedlikelink')
+										img(src='/images/reactions/like.png')
+										p Like
+								li
+									a(href='/clickedlovelink')
+										img(src='/images/reactions/love.png')
+										p Love
+								li
+									a(href='/clickedthankslink')
+										img(src='/images/reactions/thanks.png')
+										p Thanks
+								li
+									a(href='/clickedhahalink')
+										img(src='/images/reactions/haha.png')
+										p Haha
+								li
+									a(href='/clickedwowlink')
+										img(src='/images/reactions/wow.png')
+										p Wow
+								li
+									a(href='/clickedsadlink')
+										img(src='/images/reactions/sad.png')
+										p Sad
+								li
+									a(href='/clickedangrylink')
+										img(src='/images/reactions/angry.png')
+										p Angry
+			include homepage/contact

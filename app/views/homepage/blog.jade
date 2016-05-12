@@ -1,13 +1,45 @@
 section#blog
 	if blogs
-		h2 Blog
-
+		h2 Community Blog Posts
 		each blog in blogs
-			h3 Posted by: 
-				= blog.username
-			h2
-				= blog.title 
-			p
-				= blog.blogContent
+			div.blog
+				h2 #{blog.title}
+				h3 Posted by: #{blog.username) 
+				p #{blog.blogContent}
+
+				ul.submittedreactions
+					if blog.blogRxns
+						console.log('TODO: BlogRxn', blog.blogRxns)
+
+				ul.reactions
+					li
+						a(href='/clickedlikelink')
+							img(src='/images/reactions/like.png')
+							p Like
+					li
+						a(href='/clickedlovelink')
+							img(src='/images/reactions/love.png')
+							p Love
+					li
+						a(href='/clickedthankslink')
+							img(src='/images/reactions/thanks.png')
+							p Thanks
+					li
+						a(href='/clickedhahalink')
+							img(src='/images/reactions/haha.png')
+							p Haha
+					li
+						a(href='/clickedwowlink')
+							img(src='/images/reactions/wow.png')
+							p Wow
+					li
+						a(href='/clickedsadlink')
+							img(src='/images/reactions/sad.png')
+							p Sad
+					li
+						a(href='/clickedangrylink')
+							img(src='/images/reactions/angry.png')
+							p Angry
 
 	p.callout click here to read blog posts
+	

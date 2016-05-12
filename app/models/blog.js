@@ -2,13 +2,33 @@
 
 module.exports = function(sequelize, DataTypes) {
 	var Blog = sequelize.define('Blog', {
-			username: {type: DataTypes.STRING, unique: true, validate: {notNull: true, notEmpty: true}},
-			title: {type: DataTypes.STRING, unique: true, validate: {notNull: true, notEmpty: true}},
-			blogContent: {type: DataTypes.STRING, unique: true, validate: {notNull: true, notEmpty: true}}
+			username: {type: DataTypes.STRING},
+			title: {type: DataTypes.STRING},
+			blogContent: {type: DataTypes.STRING}
 		},
 		{
 			dialect: 'postgres'
 		}
 	);
+
+	var BlogRxn = sequelize.define('BlogRxn', {
+			username: {type: DataTypes.STRING},
+			blogId: {type: DataTypes.INTEGER},
+			rxn: {type: DataTypes.STRING}
+		},
+		{
+			classMethods: {
+				getBlogRxnsByBlogId: function(blogid){
+					console.log('blogid',blogid)
+				}
+			}
+		},
+		{
+			dialect: 'postgres'
+		}
+	);
+
+	Blog.hasMany(BlogRxn, {foreignKey: 'blogId'});
+
 	return Blog;	
 }

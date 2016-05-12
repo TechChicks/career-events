@@ -59,13 +59,23 @@ router.get('/nyc', function(req, res, next) {
 
 /* GET Blog */
 router.get('/blog', function(req, res, next) {
-  db.Blog.findAll()
+  db.Blog.findAll({ include: db.BlogRxn})
           .then(function(blogs){
-            res.render('homepage/blog', { blogs: blogs });    
+            console.log('TODO: BlogRxn', db.BlogRxn);
+            res.render('blog', 
+              { 
+                title: 'The ACT-W Conference Blog Page', 
+                blogs: blogs, 
+                blogRxns: 'hey' 
+              });    
           })
           .catch(function(){
             console.error('Blog lookup failed!');
-            res.render('homepage/blog', { title: 'The ACT-W Conference Home Page', blogs: null });
+            res.render('blog', 
+              { 
+                title: 'The ACT-W Conference Blog Page', 
+                blogs: null 
+              });
           })
 });
 

@@ -1361,6 +1361,82 @@ img {
   color: #FFF;
 }
 
+[id="blog"] div.blog {
+  border: 1px solid #DADADA;
+  border-radius: 10px;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: white;
+}
+
+[id="blog"] ul.submittedreactions {
+  border-radius: 10px;
+  width: 325px;
+  float: left;
+}
+
+[id="blog"] ul.submittedreactions > li {
+  display: inline-block;
+  margin: 0;
+  padding: 1px;
+  border: none;
+}
+
+[id="blog"] ul.submittedreactions > li > button {
+  border: none;
+}
+
+[id="blog"] ul.submittedreactions > li img {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+}
+
+[id="blog"] ul.submittedreactions > li p {
+  display: block;
+  text-align: center;
+  margin: 0;
+  line-height: .6em;
+  font-size: .6em;
+}
+
+[id="blog"] ul.reactions {
+  border: 2px solid #DADADA;
+  border-radius: 10px;
+  width: 325px;
+  background-color: #DADADA;
+  float: right;
+}
+
+[id="blog"] ul.reactions > li {
+  display: inline-block;
+  margin: 0;
+  padding: 2px;
+}
+
+[id="blog"] ul.reactions > li > button {
+  border: none;
+  background-color: #DADADA;
+}
+
+[id="blog"] ul.reactions > li img {
+  width: 40px;
+  height: 40px;
+  margin: 0;
+}
+
+[id="blog"] ul.reactions > li p {
+  display: none;
+}
+
+[id="blog"] ul.reactions > li:hover p {
+  display: block;
+  text-align: center;
+  margin: 0;
+  line-height: .7em;
+  font-size: .7em;
+}
+
 [id="sponsors"] {
   background: white;
 }
