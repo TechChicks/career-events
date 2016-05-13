@@ -17,29 +17,29 @@ block content
 								li
 									p.showOnHover Like
 									img(src='/images/reactions/like.png')
-									p 25
+									p #{blog.likeCount}
 								li
 									p.showOnHover Love
 									img(src='/images/reactions/love.png')
-									p 2
+									p #{blog.loveCount}
 								li
 									p.showOnHover Thanks
 									img(src='/images/reactions/thanks.png')
-									p 14
+									p #{blog.thanksCount}
 								li
 									p.showOnHover Haha
 									img(src='/images/reactions/haha.png')
-									p 0
+									p #{blog.hahaCount}
 								li
 									p.showOnHover Wow
 									img(src='/images/reactions/wow.png')
-									p 1
+									p #{blog.wowCount}
 								li
 									p.showOnHover Sad
 									img(src='/images/reactions/sad.png')
-									p 0
+									p #{blog.sadCount}
 								li
 									p.showOnHover Angry
 									img(src='/images/reactions/angry.png')
-									p 0
+									p #{blog.angryCount}
 			include homepage/contact
