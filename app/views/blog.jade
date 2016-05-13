@@ -13,38 +13,33 @@ block content
 							h3 Posted by: #{blog.username)
 							p #{blog.blogContent}
 
-							ul.submittedreactions
-								each blogRxn in blog.BlogRxns
-									li
-										p #{blogRxn.username} said #{blogRxn.rxn}!
-
 							ul.reactions
 								li
-									button(data-action='clickedlikelink')
-										img(src='/images/reactions/like.png')
-										p Like
+									p.showOnHover Like
+									img(src='/images/reactions/like.png')
+									p 25
 								li
-									a(href='/clickedlovelink')
-										img(src='/images/reactions/love.png')
-										p Love
+									p.showOnHover Love
+									img(src='/images/reactions/love.png')
+									p 2
 								li
-									a(href='/clickedthankslink')
-										img(src='/images/reactions/thanks.png')
-										p Thanks
+									p.showOnHover Thanks
+									img(src='/images/reactions/thanks.png')
+									p 14
 								li
-									a(href='/clickedhahalink')
-										img(src='/images/reactions/haha.png')
-										p Haha
+									p.showOnHover Haha
+									img(src='/images/reactions/haha.png')
+									p 0
 								li
-									a(href='/clickedwowlink')
-										img(src='/images/reactions/wow.png')
-										p Wow
+									p.showOnHover Wow
+									img(src='/images/reactions/wow.png')
+									p 1
 								li
-									a(href='/clickedsadlink')
-										img(src='/images/reactions/sad.png')
-										p Sad
+									p.showOnHover Sad
+									img(src='/images/reactions/sad.png')
+									p 0
 								li
-									a(href='/clickedangrylink')
-										img(src='/images/reactions/angry.png')
-										p Angry
+									p.showOnHover Angry
+									img(src='/images/reactions/angry.png')
+									p 0
 			include homepage/contact

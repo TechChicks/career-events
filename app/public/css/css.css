@@ -1425,11 +1425,19 @@ img {
   margin: 0;
 }
 
-[id="blog"] ul.reactions > li p {
+[id="blog"] ul.reactions > li p.showOnHover {
   display: none;
 }
 
-[id="blog"] ul.reactions > li:hover p {
+[id="blog"] ul.reactions > li:hover p.showOnHover {
+  display: block;
+  text-align: center;
+  margin: 0;
+  line-height: .7em;
+  font-size: .7em;
+}
+
+[id="blog"] ul.reactions > li p {
   display: block;
   text-align: center;
   margin: 0;

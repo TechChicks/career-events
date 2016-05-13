@@ -120,10 +120,17 @@ img {
     height: 40px;
     margin: 0;
   }
-  ul.reactions > li p { 
+  ul.reactions > li p.showOnHover { 
     display: none;
   }
-  ul.reactions > li:hover p { 
+  ul.reactions > li:hover p.showOnHover { 
+    display: block;
+    text-align: center;
+    margin: 0;
+    line-height: .7em;
+    font-size: .7em;
+  }
+  ul.reactions > li p { 
     display: block;
     text-align: center;
     margin: 0;

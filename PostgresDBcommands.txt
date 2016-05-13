@@ -1,0 +1,17 @@
+Postgres DB commands
+
+\l
+
+\c actw_development
+
+\d
+List of relations
+
+#   select * from "Blogs";
+
+#   insert into "Blogs" ("username", "title", "blogContent", "createdAt", "updatedAt") values ('shaelyn', 'Actw is the best', 'Actw is the best because it just is.', '2016-03-15', '2016-03-15');
+
+#   select * from "BlogsRxns";
+
+
+# insert into "BlogRxns" ("username", "blogId", "rxn", "createdAt", "updatedAt") values ('lauren', '1', 'Thanks', '2016-03-15', '2016-03-15');
