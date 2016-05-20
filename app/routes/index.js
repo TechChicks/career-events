@@ -58,7 +58,7 @@ router.get('/nyc', function(req, res, next) {
 
 /* GET Blog */
 router.get('/blog', function(req, res, next) {
-  db.Blog.findAll({ include: db.BlogRxn })
+  db.Blog.findAll()
     .then(function(blogs){
       for (var blog in blogs){
         blogs[blog].likeCount = 0;
@@ -68,8 +68,10 @@ router.get('/blog', function(req, res, next) {
         blogs[blog].wowCount = 0;
         blogs[blog].sadCount = 0;
         blogs[blog].angryCount = 0;
-        for (var rxn in blogs[blog].BlogRxns){
-          switch (blogs[blog].BlogRxns[rxn].rxn) {
+
+        db.BlogRxn.findAll({ where: {blogId: blogs[blog].id} }).then(function(blogRxns){
+          for (var blogRxn in blogRxns){
+            switch (blogRxns[blogRxn].rxn) {
             case 'Like':
               blogs[blog].likeCount++;
               break;
@@ -93,23 +95,24 @@ router.get('/blog', function(req, res, next) {
               break;
             default:
               break;
+            }
           }
-        }
+
+          res.render('blog',
+                     {
+                       title: 'The ACT-W Conference Blog Page',
+                       blogs: blogs,
+                     });
+        }).catch(function(){
+          console.error('Reaction lookup failed!');
+          res.render('blog',
+                     {
+                       title: 'The ACT-W Conference Blog Page',
+                       blogs: null
+                     });
+        });
       }
-      res.render('blog',
-                 {
-                     title: 'The ACT-W Conference Blog Page',
-                     blogs: blogs,
-                 });
-    })
-    .catch(function(){
-      console.error('Reaction lookup failed!');
-      res.render('blog',
-                 {
-                     title: 'The ACT-W Conference Blog Page',
-                     blogs: null
-                 });
-    })
+    });
 });
 
 /* AUTH */
