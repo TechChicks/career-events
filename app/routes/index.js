@@ -1,7 +1,9 @@
 var express = require('express')
-	, router = express.Router()
-	, user = require('./user')
+  , router = express.Router()
+  , user = require('./user')
   , db = require('../models')
+  , Sequelize = require('sequelize')
+  , Promise = Sequelize.Promise
 
 /* GET Main */
 router.get('/', function(req, res, next) {
@@ -60,7 +62,11 @@ router.get('/nyc', function(req, res, next) {
 router.get('/blog', function(req, res, next) {
   db.Blog.findAll()
     .then(function(blogs){
-      for (var blog in blogs){
+      var promises = [];
+      var blogsById = {};
+
+      for (var blog in blogs) {
+        blogsById[blogs[blog].id] = blogs[blog];
         blogs[blog].likeCount = 0;
         blogs[blog].loveCount = 0;
         blogs[blog].thanksCount = 0;
@@ -69,49 +75,45 @@ router.get('/blog', function(req, res, next) {
         blogs[blog].sadCount = 0;
         blogs[blog].angryCount = 0;
 
-        db.BlogRxn.findAll({ where: {blogId: blogs[blog].id} }).then(function(blogRxns){
+        promises.push(db.BlogRxn.findAll({ where: {blogId: blogs[blog].id} }).then(function(blogRxns){
           for (var blogRxn in blogRxns){
+            var blogId = blogRxns[blogRxn].blogId;
+            var blogEntry = blogsById[blogId];
             switch (blogRxns[blogRxn].rxn) {
             case 'Like':
-              blogs[blog].likeCount++;
+              blogEntry.likeCount++;
               break;
             case 'Love':
-              blogs[blog].loveCount++;
+              blogEntry.loveCount++;
               break;
             case 'Thanks':
-              blogs[blog].thanksCount++;
+              blogEntry.thanksCount++;
               break;
             case 'Haha':
-              blogs[blog].hahaCount++;
+              blogEntry.hahaCount++;
               break;
             case 'Wow':
-              blogs[blog].wowCount++;
+              blogEntry.wowCount++;
               break;
             case 'Sad':
-              blogs[blog].sadCount++;
+              blogEntry.sadCount++;
               break;
             case 'Angry':
-              blogs[blog].angryCount++;
+              blogEntry.angryCount++;
               break;
             default:
               break;
             }
           }
-
-          res.render('blog',
-                     {
-                       title: 'The ACT-W Conference Blog Page',
-                       blogs: blogs,
-                     });
-        }).catch(function(){
-          console.error('Reaction lookup failed!');
-          res.render('blog',
-                     {
-                       title: 'The ACT-W Conference Blog Page',
-                       blogs: null
-                     });
-        });
+        }));
       }
+      return Promise.all(promises).then(function() {
+        res.render('blog',
+                   {
+                     title: 'The ACT-W Conference Blog Page',
+                     blogs: blogs,
+                   });
+      });
     });
 });
 

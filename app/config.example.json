@@ -1,0 +1,3 @@
+{
+    "postgres" : "postgres://USER:PASSWORD@HOST/actw_development"
+}
