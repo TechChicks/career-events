@@ -60,13 +60,9 @@ router.get('/nyc', function(req, res, next) {
 
 /* GET Blog */
 router.get('/blog', function(req, res, next) {
-  db.Blog.findAll()
+  db.Blog.findAll({ include: db.BlogRxn })
     .then(function(blogs){
-      var promises = [];
-      var blogsById = {};
-
       for (var blog in blogs) {
-        blogsById[blogs[blog].id] = blogs[blog];
         blogs[blog].likeCount = 0;
         blogs[blog].loveCount = 0;
         blogs[blog].thanksCount = 0;
@@ -75,11 +71,10 @@ router.get('/blog', function(req, res, next) {
         blogs[blog].sadCount = 0;
         blogs[blog].angryCount = 0;
 
-        promises.push(db.BlogRxn.findAll({ where: {blogId: blogs[blog].id} }).then(function(blogRxns){
-          for (var blogRxn in blogRxns){
-            var blogId = blogRxns[blogRxn].blogId;
-            var blogEntry = blogsById[blogId];
-            switch (blogRxns[blogRxn].rxn) {
+        var blogRxns = blogs[blog].BlogRxns;
+        for (var blogRxn in blogRxns){
+          var blogEntry = blogs[blog];
+          switch (blogEntry.rxn) {
             case 'Like':
               blogEntry.likeCount++;
               break;
@@ -103,17 +98,15 @@ router.get('/blog', function(req, res, next) {
               break;
             default:
               break;
-            }
           }
-        }));
+        }
       }
-      return Promise.all(promises).then(function() {
-        res.render('blog',
-                   {
-                     title: 'The ACT-W Conference Blog Page',
-                     blogs: blogs,
-                   });
-      });
+
+      res.render('blog',
+                 {
+                   title: 'The ACT-W Conference Blog Page',
+                   blogs: blogs,
+                 });
     });
 });
 
