@@ -15,7 +15,7 @@
   5. Add placeholder data for blogs `insert into "Blogs" ("username", "title", "blogContent", "createdAt", "updatedAt") values ('shaelyn', 'Actw is the best', 'Actw is the best because it just is.', '2016-03-15', '2016-03-15');`
 
 
-### To run
+### To run hot reloading dev environment
 
 ```bash
 $ gulp
