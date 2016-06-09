@@ -5,14 +5,7 @@ var express = require('express')
 
 /* GET Main */
 router.get('/', function(req, res, next) {
-  db.Blog.findAll()  //{ where: {id: 1}} limit to top 2 chosen, shorter posts
-          .then(function(blogs){
-            res.render('homepage/index', { title: 'The ACT-W Conference Home Page', blogs: blogs });
-          })
-          .catch(function(){
-            console.error('Blog lookup failed!');
-            res.render('homepage/index', { title: 'The ACT-W Conference Home Page' });
-          })
+  res.render('homepage/index', { title: 'The ACT-W Conference Home Page' });
   var sess = req.session;
   if (sess.views)
     sess.views++;
@@ -54,62 +47,6 @@ router.get('/chicago', function(req, res, next) {
 /* GET New York */
 router.get('/nyc', function(req, res, next) {
   res.render('city-pages/nyc/index', { title: 'New York ACT-W Conference', city: 'New York City' });
-});
-
-/* GET Blog */
-router.get('/blog', function(req, res, next) {
-  db.Blog.findAll({ include: db.BlogRxn })
-    .then(function(blogs){
-      for (var blog in blogs){
-        blogs[blog].likeCount = 0;
-        blogs[blog].loveCount = 0;
-        blogs[blog].thanksCount = 0;
-        blogs[blog].hahaCount = 0;
-        blogs[blog].wowCount = 0;
-        blogs[blog].sadCount = 0;
-        blogs[blog].angryCount = 0;
-        for (var rxn in blogs[blog].BlogRxns){
-          switch (blogs[blog].BlogRxns[rxn].rxn) {
-            case 'Like':
-              blogs[blog].likeCount++;
-              break;
-            case 'Love':
-              blogs[blog].loveCount++;
-              break;
-            case 'Thanks':
-              blogs[blog].thanksCount++;
-              break;
-            case 'Haha':
-              blogs[blog].hahaCount++;
-              break;
-            case 'Wow':
-              blogs[blog].wowCount++;
-              break;
-            case 'Sad':
-              blogs[blog].sadCount++;
-              break;
-            case 'Angry':
-              blogs[blog].angryCount++;
-              break;
-            default:
-              break;
-          }
-        }
-      }
-      res.render('blog',
-                 {
-                     title: 'The ACT-W Conference Blog Page',
-                     blogs: blogs,
-                 });
-    })
-    .catch(function(){
-      console.error('Reaction lookup failed!');
-      res.render('blog',
-                 {
-                     title: 'The ACT-W Conference Blog Page',
-                     blogs: null
-                 });
-    })
 });
 
 /* AUTH */
