@@ -11,9 +11,7 @@
   1. Run `psql` to access the Postgres server
   2. Run `CREATE DATABASE actw_development;` to create the database;
   3. Run `\c actw_development` to connect to the database;
-  4. Blog tables and BlogRxn tables are created automatically
-  5. Add placeholder data for blogs `insert into "Blogs" ("username", "title", "blogContent", "createdAt", "updatedAt") values ('shaelyn', 'Actw is the best', 'Actw is the best because it just is.', '2016-03-15', '2016-03-15');`
-
+  4. User tables are created automatically
 
 ### To run hot reloading dev environment
 
