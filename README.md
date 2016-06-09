@@ -5,16 +5,14 @@
 
 1. Run `npm install -g gulp` to install [Gulp](http://gulpjs.com/) globally
 2. Run `npm install` to get all of the project dependencies listed in `package.json`
-3. Finally create `app/config.json` file in the actw/app directory. You'll need to contact a collaborator for the config details.
  
-### Database setup:
-  1. Run `psql` to access the Postgres server
-  2. Run `CREATE DATABASE actw_development;` to create the database;
-  3. Run `\c actw_development` to connect to the database;
-  4. User tables are created automatically
+### Postgres Database setup:
+  1. Create the Postgres database `CREATE DATABASE actw_development;`
+  2. Connect to the Postgres server ` \c actw_development`
+  3. User tables are created automatically
+  4. Finally create `app/config.json` file in the actw/app directory. You'll need to contact a collaborator for the config details.
 
 ### To run hot reloading dev environment
-
 ```bash
 $ gulp
 ```
