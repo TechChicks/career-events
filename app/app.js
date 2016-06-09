@@ -40,9 +40,6 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-db.Blog.hasMany(db.BlogRxn, {foreignKey: 'blogId'});
-db.BlogRxn.belongsTo(db.Blog, { onDelete: "CASCADE", foreignKey: { name: 'blogId', allowNull: false }});
-
 db
   .sequelize
   .sync()

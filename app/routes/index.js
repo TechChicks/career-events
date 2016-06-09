@@ -7,14 +7,7 @@ var express = require('express')
 
 /* GET Main */
 router.get('/', function(req, res, next) {
-  db.Blog.findAll()  //{ where: {id: 1}} limit to top 2 chosen, shorter posts
-          .then(function(blogs){
-            res.render('homepage/index', { title: 'The ACT-W Conference Home Page', blogs: blogs });
-          })
-          .catch(function(){
-            console.error('Blog lookup failed!');
-            res.render('homepage/index', { title: 'The ACT-W Conference Home Page' });
-          })
+  res.render('homepage/index', { title: 'The ACT-W Conference Home Page' });
   var sess = req.session;
   if (sess.views)
     sess.views++;
@@ -56,65 +49,6 @@ router.get('/chicago', function(req, res, next) {
 /* GET New York */
 router.get('/nyc', function(req, res, next) {
   res.render('city-pages/nyc/index', { title: 'New York ACT-W Conference', city: 'New York City' });
-});
-
-/* GET Blog */
-router.get('/blog', function(req, res, next) {
-  db.Blog.findAll()
-    .then(function(blogs){
-      var promises = [];
-      var blogsById = {};
-
-      for (var blog in blogs) {
-        blogsById[blogs[blog].id] = blogs[blog];
-        blogs[blog].likeCount = 0;
-        blogs[blog].loveCount = 0;
-        blogs[blog].thanksCount = 0;
-        blogs[blog].hahaCount = 0;
-        blogs[blog].wowCount = 0;
-        blogs[blog].sadCount = 0;
-        blogs[blog].angryCount = 0;
-
-        promises.push(db.BlogRxn.findAll({ where: {blogId: blogs[blog].id} }).then(function(blogRxns){
-          for (var blogRxn in blogRxns){
-            var blogId = blogRxns[blogRxn].blogId;
-            var blogEntry = blogsById[blogId];
-            switch (blogRxns[blogRxn].rxn) {
-            case 'Like':
-              blogEntry.likeCount++;
-              break;
-            case 'Love':
-              blogEntry.loveCount++;
-              break;
-            case 'Thanks':
-              blogEntry.thanksCount++;
-              break;
-            case 'Haha':
-              blogEntry.hahaCount++;
-              break;
-            case 'Wow':
-              blogEntry.wowCount++;
-              break;
-            case 'Sad':
-              blogEntry.sadCount++;
-              break;
-            case 'Angry':
-              blogEntry.angryCount++;
-              break;
-            default:
-              break;
-            }
-          }
-        }));
-      }
-      return Promise.all(promises).then(function() {
-        res.render('blog',
-                   {
-                     title: 'The ACT-W Conference Blog Page',
-                     blogs: blogs,
-                   });
-      });
-    });
 });
 
 /* AUTH */
