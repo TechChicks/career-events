@@ -1,7 +1,9 @@
 var express = require('express')
-	, router = express.Router()
-	, user = require('./user')
+  , router = express.Router()
+  , user = require('./user')
   , db = require('../models')
+  , Sequelize = require('sequelize')
+  , Promise = Sequelize.Promise
 
 /* GET Main */
 router.get('/', function(req, res, next) {
