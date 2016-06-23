@@ -1,4 +1,6 @@
-# Act-W Website
+# ChickTech Career Events
+A website documenting and demo'ing all the cool work, events, and learning coming out of ChickTech Career Events in Portland.
+Events in other cities to come as other career events managers in other cities start adding the project
 
 ### Setup
 **Note:** This project assumes you've installed [Node](https://nodejs.org/en/) v5.9.1 and [Postgres](http://www.postgresql.org/).
