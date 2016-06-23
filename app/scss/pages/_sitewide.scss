@@ -17,14 +17,18 @@ img {
     }
   }
 
-  h3 { 
-    color: $teal; 
+  h3 {
+    color: $teal;
     font-size: 2.1rem;
     font-style: italic;
     font-weight: 100;
     margin-bottom: 30px;
-    margin-top: 12px; 
-    width: 100%; 
+    margin-top: 12px;
+    width: 100%;
+  }
+
+  .centered {
+    text-align: center;  
   }
 }
 
@@ -66,7 +70,7 @@ img {
 [id="blog"] {
   div.blog {
     border: 1px solid #DADADA;
-    border-radius: 10px; 
+    border-radius: 10px;
     margin: 10px 0;
     padding: 10px;
     background-color: white;
@@ -86,12 +90,12 @@ img {
   ul.submittedreactions > li > button {
     border: none;
   }
-  ul.submittedreactions > li img { 
+  ul.submittedreactions > li img {
     width: 20px;
     height: 20px;
     margin: 0;
   }
-  ul.submittedreactions > li p { 
+  ul.submittedreactions > li p {
     display: block;
     text-align: center;
     margin: 0;
@@ -115,22 +119,22 @@ img {
     border: none;
     background-color: #DADADA;
   }
-  ul.reactions > li img { 
+  ul.reactions > li img {
     width: 40px;
     height: 40px;
     margin: 0;
   }
-  ul.reactions > li p.showOnHover { 
+  ul.reactions > li p.showOnHover {
     display: none;
   }
-  ul.reactions > li:hover p.showOnHover { 
+  ul.reactions > li:hover p.showOnHover {
     display: block;
     text-align: center;
     margin: 0;
     line-height: .7em;
     font-size: .7em;
   }
-  ul.reactions > li p { 
+  ul.reactions > li p {
     display: block;
     text-align: center;
     margin: 0;
@@ -150,7 +154,7 @@ img {
     //max-width: 960px;
   }
 
-  .sponsor { 
+  .sponsor {
     padding: 3% 6%;
     width: calc(100%/3);
 
@@ -158,13 +162,13 @@ img {
     &:nth-of-type(3n+2) { text-align: center; }
     &:nth-of-type(3n+3) { padding-right: 0; text-align: right; }
 
-    img { 
+    img {
       max-width: 210px;
-      order: 2; 
+      order: 2;
       width: 100%;
     }
 
-    p { 
+    p {
       font-size: .9rem;
       order: 1;
       text-align: center;
@@ -187,14 +191,14 @@ img {
     margin-top: 30px;
   }
 }
-[id="contact"] { 
-  background: darken($teal, 36); 
+[id="contact"] {
+  background: darken($teal, 36);
   color: $teal;
 
   h2 { color: white; }
-  h3 { 
+  h3 {
     color: $teal;
-    text-transform: uppercase; 
+    text-transform: uppercase;
     margin-bottom: 6px;
   }
 
@@ -212,11 +216,11 @@ img {
     font-weight: bold;
   }
 
-  .title { 
+  .title {
     font-weight: bold;
   }
 
-  .email { 
+  .email {
     color: fade-out($teal, .4);
   }
 }
@@ -234,7 +238,7 @@ img {
 }
 
 /* Mobile */
-@media screen and (max-width: 767px) and (min-width: 500px) { 
+@media screen and (max-width: 767px) and (min-width: 500px) {
 }
 
 /* Mobile */

@@ -1227,7 +1227,7 @@ ul, ol {
   list-style-position: inside;
 }
 
-p.callout {
+.callout {
   background: rgba(46, 38, 31, 0.5);
   border-radius: 3px;
   color: #f5ede6;
@@ -1321,6 +1321,10 @@ img {
   margin-bottom: 30px;
   margin-top: 12px;
   width: 100%;
+}
+
+[id="about"] .centered {
+  text-align: center;
 }
 
 [id="cities"] {
