@@ -1182,7 +1182,6 @@ h1, .h1 {
   font-size: 3rem;
   font-weight: 900;
   line-height: 1;
-  text-transform: uppercase;
 }
 
 h1.underlined, .h1.underlined {
@@ -1279,6 +1278,34 @@ section h2 {
 
 img {
   width: 100%;
+}
+
+[id="header"] h1 {
+  font-size: 5.2rem;
+  margin: 0;
+}
+
+[id="header"] h1 span {
+  font-family: "Euphoria Script", cursive;
+  font-size: 2.7rem;
+  font-weight: normal;
+  letter-spacing: -1px;
+  text-transform: lowercase;
+  vertical-align: 9px;
+}
+
+[id="header"] h3 {
+  color: #39AAAA;
+  font-size: 2.1rem;
+  font-style: italic;
+  font-weight: 100;
+  margin-bottom: 30px;
+  margin-top: 12px;
+  width: 100%;
+}
+
+[id="header"] .centered {
+  text-align: center;
 }
 
 [id="about"] h1 {
