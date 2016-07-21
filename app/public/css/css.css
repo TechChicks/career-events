@@ -1281,11 +1281,13 @@ img {
   width: 100%;
 }
 
+[id="header"] h1,
 [id="about"] h1 {
   font-size: 5.2rem;
   margin: 0;
 }
 
+[id="header"] h1 span,
 [id="about"] h1 span {
   font-family: "Euphoria Script", cursive;
   font-size: 2.7rem;
@@ -1295,6 +1297,7 @@ img {
   vertical-align: 9px;
 }
 
+[id="header"] h3,
 [id="about"] h3 {
   color: #39AAAA;
   font-size: 2.1rem;
@@ -1305,6 +1308,7 @@ img {
   width: 100%;
 }
 
+[id="header"] .centered,
 [id="about"] .centered {
   text-align: center;
 }
@@ -1515,6 +1519,7 @@ img {
 
 [id="contact"] .contact {
   margin: 15px 0;
+  width: 75%;
 }
 
 [id="contact"] dd, [id="contact"] dt {
@@ -1523,8 +1528,8 @@ img {
 
 [id="contact"] .name {
   color: white;
-  font-size: 1.8rem;
-  font-weight: bold;
+  font-size: 1.1em;
+  font-weight: normal;
 }
 
 [id="contact"] .title {
@@ -1532,6 +1537,7 @@ img {
 }
 
 [id="contact"] .email {
+  font-size: 9px;
   color: rgba(57, 170, 170, 0.6);
 }
 
