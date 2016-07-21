@@ -9,12 +9,8 @@ This website is open source and run by a talented group of developers, designers
 
 1. Run `npm install -g gulp` to install [Gulp](http://gulpjs.com/) globally
 2. Run `npm install` to get all of the project dependencies listed in `package.json`
+3. Change `config.example.json` to `config.json`
  
-### Postgres Database setup:
-  1. Create the Postgres database `CREATE DATABASE actw_development;`
-  2. Connect to the Postgres server ` \c actw_development`
-  3. User tables are created automatically
-  4. Finally create `app/config.json` file in the actw/app directory. You'll need to contact a collaborator for the config details.
 
 ### To run hot reloading dev environment
 ```bash

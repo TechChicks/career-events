@@ -33,7 +33,7 @@ gulp.task('bs-reload', function() {
 // BrowserSync Settings
 gulp.task('browser-sync', ['nodemon'], function() {
   browserSync({
-  proxy: "localhost:5000",
+  proxy: "localhost:6000",
   port: 7000
   });
 });
