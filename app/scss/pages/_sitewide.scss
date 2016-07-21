@@ -2,6 +2,7 @@ img {
   width: 100%;
 }
 
+[id="header"],
 [id="about"] {
   h1 {
     font-size: 5.2rem;
@@ -204,6 +205,7 @@ img {
 
   .contact {
     margin: 15px 0;
+    width: 75%;
   }
 
   dd, dt {
@@ -212,8 +214,8 @@ img {
 
   .name {
     color: white;
-    font-size: 1.8rem;
-    font-weight: bold;
+    font-size: 1.1em;
+    font-weight: normal;
   }
 
   .title {
@@ -221,6 +223,7 @@ img {
   }
 
   .email {
+    font-size: 9px;
     color: fade-out($teal, .4);
   }
 }
