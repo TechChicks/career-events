@@ -2,7 +2,6 @@ require('newrelic')
 var express = require('express')
  , routesIndex = require('./routes/index')
  , app = express()
- , db = require('./models')
  , path = require('path')
  , favicon = require('serve-favicon')
  , logger = require('morgan')
@@ -40,10 +39,6 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-db
-  .sequelize
-  .sync()
-
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
@@ -65,7 +60,5 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
-
-
 
 module.exports = app;
