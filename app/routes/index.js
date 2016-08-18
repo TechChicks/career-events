@@ -1,9 +1,5 @@
 var express = require('express')
   , router = express.Router()
-  , user = require('./user')
-  , db = require('../models')
-  , Sequelize = require('sequelize')
-  , Promise = Sequelize.Promise
 
 /* GET Main */
 router.get('/', function(req, res, next) {
@@ -50,31 +46,5 @@ router.get('/chicago', function(req, res, next) {
 router.get('/nyc', function(req, res, next) {
   res.render('city-pages/nyc/index', { title: 'New York ChickTech Career Events', city: 'New York City' });
 });
-
-/* AUTH */
-router.get('/login', function(req, res, next) {
-  res.render('login');
-});
-
-router.post('/login', user.authenticate);
-
-router.get('/logout', function(req, res, next) {
-  req.session.destroy(function(err) {
-    //TODO: pop up that says you have been logged out
-    console.log('Session destroyed');
-  })
-  res.render('login');
-});
-
-router.get('/signup', function(req, res, next) {
-  res.render('signup');
-});
-router.post('/register', user.register)
-
-// app.get('/profile',
-//   require('connect-ensure-login').ensureLoggedIn(),
-//   function(req, res){
-//     res.render('profile', { user: req.user });
-//   });
 
 module.exports = router;
