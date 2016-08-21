@@ -2,6 +2,10 @@ img {
   width: 100%;
 }
 
+.centered {
+  text-align: center;  
+}
+
 [id="header"] {
   padding: 15% 6%;
 
@@ -20,7 +24,7 @@ img {
   }
 
   h3 {
-    color: $teal;
+    color: #fff;
     font-size: 2.1rem;
     font-style: italic;
     font-weight: 100;
@@ -29,9 +33,7 @@ img {
     width: 100%;
   }
 
-  .centered {
-    text-align: center;  
-  }
+
 }
 .mainBackground {
   background-image: url(../../public/../images/pdx/images/header.png)
@@ -42,6 +44,7 @@ img {
 
 
 [id="about"] {
+  padding: 9% 6% 0 6%;
   h1 {
     font-size: 5.2rem;
     margin: 0;
@@ -185,6 +188,7 @@ img {
 
 [id="sponsors"] {
   background: white;
+  padding: 3% 6%;
 
   .sponsors {
     align-items: center;
@@ -222,7 +226,13 @@ img {
   }
 }
 
-[id="opportunities"] {}
+[id="opportunities"] {
+}
+
+[id="schedule"] {
+  padding: 3% 6%;
+}
+
 [id="organizers"] {
   background: white;
   img { max-width: 240px }
