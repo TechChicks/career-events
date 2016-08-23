@@ -2,8 +2,49 @@ img {
   width: 100%;
 }
 
-[id="header"],
+.centered {
+  text-align: center;  
+}
+
+[id="header"] {
+  padding: 15% 6%;
+
+  h1 {
+    font-size: 5.2rem;
+    margin: 0;
+
+    span {
+      font-family: $script;
+      font-size: 2.7rem;
+      font-weight: normal;
+      letter-spacing: -1px;
+      text-transform: lowercase;
+      vertical-align: 9px;
+    }
+  }
+
+  h3 {
+    color: #fff;
+    font-size: 2.1rem;
+    font-style: italic;
+    font-weight: 100;
+    margin-bottom: 30px;
+    margin-top: 12px;
+    width: 100%;
+  }
+
+
+}
+.mainBackground {
+  background-image: url(../../public/../images/pdx/images/header.png)
+}
+.portlandBackground {
+  background-image: url(../../public/../images/pdx/images/header.png)
+}
+
+
 [id="about"] {
+  padding: 9% 6% 0 6%;
   h1 {
     font-size: 5.2rem;
     margin: 0;
@@ -32,6 +73,7 @@ img {
     text-align: center;  
   }
 }
+
 
 [id="cities"] {
   background: linear-gradient(darken($teal, 15) 30%, $melon 150%);
@@ -146,6 +188,7 @@ img {
 
 [id="sponsors"] {
   background: white;
+  padding: 3% 6%;
 
   .sponsors {
     align-items: center;
@@ -183,7 +226,13 @@ img {
   }
 }
 
-[id="opportunities"] {}
+[id="opportunities"] {
+}
+
+[id="schedule"] {
+  padding: 3% 6%;
+}
+
 [id="organizers"] {
   background: white;
   img { max-width: 240px }
