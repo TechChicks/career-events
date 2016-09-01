@@ -10,7 +10,7 @@ This website is open source and run by a talented group of developers, designers
 1. Run `npm install -g gulp` to install [Gulp](http://gulpjs.com/) globally
 2. Run `npm install` to get all of the project dependencies listed in `package.json`
 3. Change `config.example.json` to `config.json`
- 
+
 
 ### To run hot reloading dev environment
 ```bash
@@ -23,3 +23,17 @@ If everything is working properly, you should see Gulp spinning up Nodemon (whic
 ### Troubleshooting
 - Every once and awhile, dependencies don't install or update properly. The recommended solution is to delete the project's `node_modules` folder and run `npm install`
 
+### Deployment
+Hosting and deployment is managed with [Firebase]((https://firebase.google.com/docs/hosting/deploying)).
+
+First, make sure you've ran gulp to transpile jade files to html files.
+
+Then, you'll need to install Firebase CLI
+```bash
+$ npm install -g firebase-tools
+```
+
+Then, to deploy, simply run the command
+```bash
+$ firebase deploy
+```

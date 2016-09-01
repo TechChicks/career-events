@@ -9,8 +9,19 @@ var express = require('express')
  , cookieParser = require('cookie-parser')
  , bodyParser = require('body-parser')
  , http = require('http')
+ , firebase = require('firebase')
 
 SALT_WORK_FACTOR = 12;
+
+// Initialize Firebase
+// TODO: Replace with your project's customized code snippet
+var config = {
+  apiKey: process.env['API_KEY'],
+  authDomain: "chicktech-career.firebaseapp.com",
+  databaseURL: "https://chicktech-career.firebaseio.com",
+  storageBucket: "chicktech-career.appspot.com",
+};
+firebase.initializeApp(config);
 
 app.listen(5000);
 

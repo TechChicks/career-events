@@ -1,0 +1,20 @@
+{
+  "database": {
+    "rules": "database.rules.json"
+  },
+  "hosting": {
+    "public": "public",
+    "redirects": [
+      {
+        "source": "/",
+        "destination": "/homepage/index.html",
+        "type": 301
+      },
+      {
+        "source" : "/pdx",
+        "destination" : "/city-pages/pdx/index.html",
+        "type": 301
+      }
+    ]
+  }
+}

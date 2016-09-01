@@ -1,5 +1,5 @@
 'use strict';
- 
+
 var gulp              = require('gulp');
 var browserSync       = require('browser-sync');
 var jade              = require('gulp-jade');
@@ -7,23 +7,33 @@ var sass              = require('gulp-sass');
 var sourcemaps        = require('gulp-sourcemaps');
 var autoprefixer      = require('gulp-autoprefixer');
 var nodemon           = require('gulp-nodemon');
-
+var jade              = require('gulp-jade');
 var reload            = browserSync.reload;
 
 var src = {
   scss: 'scss/**/*.scss',
   css:  'public/css',
-  jade: 'views/*.jade'
+  jade: 'views/**/*.jade'
 };
 
 // Default Task
-gulp.task('default', ['browser-sync', 'compile'], function() {
+gulp.task('default', ['browser-sync', 'compile', 'templates'], function() {
   gulp.watch([src.scss], ['sass']);
   gulp.watch([src.jade], ['jade']);
 });
 
 // Compile
 gulp.task('compile', ['sass']);
+
+gulp.task('templates', function() {
+  var YOUR_LOCALS = {};
+
+  gulp.src(src.jade)
+    .pipe(jade({
+      locals: YOUR_LOCALS
+    }))
+    .pipe(gulp.dest('./public/'))
+});
 
 // Window Reload
 gulp.task('bs-reload', function() {
@@ -64,7 +74,7 @@ gulp.task('nodemon', function(cb) {
 });
 
 
-// Jade 
+// Jade
 gulp.task('jade', function() {
   gulp.src(src.jade)
   .pipe(reload({stream: true}));
@@ -89,5 +99,3 @@ gulp.task('sass', function () {
     .pipe(gulp.dest(src.css))
     .pipe(reload({stream: true}));
 });
-
-
