@@ -1,4 +1,4 @@
-# ChickTech Career Events
+# [ChickTech Career Events](https://chicktech-career.firebaseapp.com/)
 A website documenting and demo'ing all the cool work, events, and learning coming out of ChickTech Career Events in Portland.
 Events in other cities to come as other career events managers in other cities start adding the project.
 
