@@ -11,6 +11,7 @@
     "debug": "~2.2.0",
     "express": "~4.13.1",
     "express-session": "^1.13.0",
+    "firebase": "^3.3.0",
     "jade": "~1.11.0",
     "morgan": "~1.6.1",
     "newrelic": "^1.28.0",
